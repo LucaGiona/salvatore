@@ -1,0 +1,335 @@
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --cream: #f5f0e8;
+      --dark: #1a1611;
+      --red: #c0392b;
+      --warm-gray: #8c7b6b;
+      --gold: #ffffff;
+    }
+
+    body {
+      background: var(--dark);
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--cream);
+    }
+
+    /* ── Section Header ── */
+    .section-header {
+      text-align: center;
+      padding: 80px 20px 60px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      color: var(--warm-gray);
+    }
+
+    .section-header h1 {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      letter-spacing: 0.05em;
+      text-transform: none;
+      color: var(--cream);
+      margin-top: 12px;
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+    .section-header h3 {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      letter-spacing: 0.05em;
+      text-transform: none;
+      color: var(--cream);
+      margin-top: 12px;
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+
+    /* ── Module Grid ── */
+    .modules {
+      display: flex;
+      width: 100%;
+      max-width: 2400px;
+      margin: 0 auto;
+    }
+
+    .modul {
+      flex: 1;
+      aspect-ratio: 1 / 1;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    /* Placeholder backgrounds (ersetze mit deinen Bildern) */
+    .modul:nth-child(1) { background: #2a2218; }
+    .modul:nth-child(2) { background: #1e1d16; }
+    .modul:nth-child(3) { background: #221a14; }
+
+    /* Bild – ersetze src durch deine Dateipfade */
+    .modul-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  filter 0.8s ease;
+      filter: grayscale(30%) brightness(0.75);
+    }
+
+    .modul:hover .modul-bg {
+      transform: scale(1.06);
+      filter: grayscale(0%) brightness(0.6);
+    }
+
+    /* Grain Overlay */
+    .modul::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+      background-size: 200px;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.4;
+    }
+
+    /* Gradient Overlay */
+    .modul-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 30%,
+        rgba(10, 8, 5, 0.3) 60%,
+        rgba(10, 8, 5, 0.85) 100%
+      );
+      z-index: 2;
+      transition: opacity 0.5s ease;
+    }
+
+    .modul:hover .modul-overlay {
+      background: linear-gradient(
+        to bottom,
+        transparent 20%,
+        rgba(10, 8, 5, 0.4) 55%,
+        rgba(10, 8, 5, 0.92) 100%
+      );
+    }
+
+    /* Content */
+    .modul-content {
+      position: absolute;
+      top: 36px;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      padding: 0 36px;
+      transform: translateY(8px);
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .modul:hover .modul-content {
+      transform: translateY(0);
+    }
+
+    .modul-nummer {
+      font-size: .99rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 14px;
+      opacity: 0.8;
+    }
+
+    .modul-titel {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-top: 44px;
+      color: var(--cream);
+    }
+
+    .modul-text {
+      font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+      line-height: 1.7;
+      color: rgba(245, 240, 232, 0.72);
+      font-weight: 300;
+      font-style: italic;
+      max-width: 340px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+    }
+
+    .modul:hover .modul-text {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Divider line */
+    .modul-line {
+      width: 40px;
+      height: 1px;
+      background: var(--red);
+      margin: 16px 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .modul:hover .modul-line {
+      transform: scaleX(1);
+    }
+
+    /* Button */
+    .modul-btn {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 3px;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s,
+                  color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .modul:hover .modul-btn {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .modul-btn:hover {
+      color: var(--gold);
+    }
+
+    /* Top accent line per module */
+    .modul-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      z-index: 4;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.6s ease;
+    }
+
+    .modul:nth-child(1) .modul-accent { background: var(--red); }
+    .modul:nth-child(2) .modul-accent { background: var(--gold); }
+    .modul:nth-child(3) .modul-accent { background: var(--warm-gray); }
+
+    .modul:hover .modul-accent {
+      transform: scaleX(1);
+    }
+
+    /* Separator between modules */
+    .modul + .modul {
+      border-left: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* ── Placeholder visuals (entfernen wenn echte Bilder da sind) ── */
+    .placeholder-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -70%);
+      z-index: 1;
+      font-size: 5rem;
+      opacity: 0.07;
+      pointer-events: none;
+    }
+
+
+    @media (max-width: 768px) {
+
+      .modules {
+        flex-direction: row;
+        height: 420px;
+      }
+
+      .modul {
+        flex: 1;
+        aspect-ratio: unset;
+        transition: flex 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .modules:has(.active) .modul:not(.active) {
+        flex: 0.4;
+      }
+
+      .modul.active {
+        flex: 2;
+      }
+
+      .modul .modul-bg,
+      .modul:hover .modul-bg {
+        transform: none !important;
+      }
+
+      .modul-text {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      .modul-btn {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      .modul-line {
+        transform: scaleX(0);
+      }
+
+      .modul.active .modul-text {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .modul.active .modul-btn {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .modul.active .modul-line {
+        transform: scaleX(1);
+      }
+
+      .modul.active .modul-accent {
+        transform: scaleX(1);
+      }
+
+      .modul-content {
+        padding: 0 14px;
+      }
+
+      .modul + .modul {
+        border-left: 1px solid rgba(255,255,255,0.08);
+        border-top: none;
+      }
+    }
+
+    /* ── Footer hint ── */
+    .hint {
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.2);
+      text-transform: uppercase;
+    }

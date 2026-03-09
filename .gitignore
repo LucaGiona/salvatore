@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Dependencies (falls du später npm nutzt)
+node_modules/
+
+# Build outputs (falls du später baust)
+dist/
+build/
+
+# Env / Secrets
+.env
+.env.local

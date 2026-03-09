@@ -12,7 +12,7 @@
       --white: #ffffff; 
       --green: #66fa09;
       --warm-gray: #8c7b6b;
-     
+      --gold: #b8976a;
       --orange: #f8b42d;
     }
 
@@ -196,9 +196,11 @@
       font-size: 0.7rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--cream);
+      background-color: transparent;
+      color: var(--white);
+      border-bottom: 1px solid var(--warm-gray);
       text-decoration: none;
-      border-bottom: 1px solid var(--gold);
+      border:none;
       padding-bottom: 3px;
       opacity: 1;
       transform: translateY(0);
@@ -352,4 +354,69 @@
       letter-spacing: 0.2em;
       color: rgba(255,255,255,0.2);
       text-transform: uppercase;
+    }
+
+    /* ── Drawer ── */
+    .drawer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      background: #211c14;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .drawer.open {
+      max-height: 600px;
+    }
+
+    .drawer-inner {
+      padding: 48px 60px;
+      position: relative;
+      max-width: 800px;
+    }
+
+    .drawer-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: none;
+      border: none;
+      color: var(--warm-gray);
+      font-size: 1rem;
+      cursor: pointer;
+      letter-spacing: 0.1em;
+      transition: color 0.2s;
+    }
+
+    .drawer-close:hover {
+      color: var(--cream);
+    }
+
+    .drawer-titel {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--cream);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      opacity: 0.6;
+    }
+
+    .drawer-content p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(245, 240, 232, 0.75);
+      font-weight: 300;
+      margin-bottom: 1em;
+    }
+
+    .drawer-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      .drawer-inner {
+        padding: 32px 24px;
+      }
     }

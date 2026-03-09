@@ -26,3 +26,28 @@ window.addEventListener('resize', () => {
     moduls.forEach(m => m.classList.remove('active'));
   }
 });
+
+// ── Drawer ──
+document.querySelectorAll('.modul-btn[data-drawer]').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const drawerId = btn.getAttribute('data-drawer');
+    const drawer = document.getElementById(drawerId);
+    const isOpen = drawer.classList.contains('open');
+
+    // Alle Drawer schließen
+    document.querySelectorAll('.drawer').forEach(d => d.classList.remove('open'));
+
+    // Diesen öffnen wenn er zu war
+    if (!isOpen) {
+      drawer.classList.add('open');
+      drawer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  });
+});
+
+document.querySelectorAll('.drawer-close').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.drawer').classList.remove('open');
+  });
+});

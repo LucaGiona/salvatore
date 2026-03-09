@@ -331,10 +331,10 @@
       .modul-arrow {
         display: block;
         position: absolute;
-        bottom: 14px;
-        right: 16px;
+        bottom: 24px;
+        right: 36px;
         z-index: 5;
-        font-size: 1.1rem;
+        font-size: 1.9rem;
         color: rgba(245, 240, 232, 0.6);
         transition: opacity 0.3s ease;
         pointer-events: none;

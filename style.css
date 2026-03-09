@@ -9,8 +9,11 @@
       --cream: #f5f0e8;
       --dark: #1a1611;
       --red: #c0392b;
+      --white: #ffffff; 
+      --green: #66fa09;
       --warm-gray: #8c7b6b;
-      --gold: #ffffff;
+     
+      --orange: #f8b42d;
     }
 
     body {
@@ -22,7 +25,7 @@
     /* ── Section Header ── */
     .section-header {
       text-align: center;
-      padding: 80px 20px 60px;
+      padding: 0px 20px 40px;
       letter-spacing: 0.3em;
       text-transform: uppercase;
       font-size: 0.75rem;
@@ -127,7 +130,7 @@
     /* Content */
     .modul-content {
       position: absolute;
-      top: 36px;
+      top: 6px;
       left: 0;
       right: 0;
       z-index: 3;
@@ -142,11 +145,13 @@
 
     .modul-nummer {
       font-size: .99rem;
+      font-weight: bold;
       letter-spacing: 0.35em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-top: 14px;
+      color: var(--white);
+      margin-top: 4px;
       opacity: 0.8;
+
     }
 
     .modul-titel {
@@ -154,7 +159,7 @@
       font-size: clamp(1.6rem, 2.5vw, 2.4rem);
       font-weight: 400;
       line-height: 1.15;
-      margin-top: 44px;
+      margin-top: 8rem;
       color: var(--cream);
     }
 
@@ -216,9 +221,9 @@
       transition: transform 0.6s ease;
     }
 
-    .modul:nth-child(1) .modul-accent { background: var(--red); }
-    .modul:nth-child(2) .modul-accent { background: var(--gold); }
-    .modul:nth-child(3) .modul-accent { background: var(--warm-gray); }
+    .modul:nth-child(1) .modul-accent { background: var(--green); }
+    .modul:nth-child(2) .modul-accent { background: var(--white); }
+    .modul:nth-child(3) .modul-accent { background: var(--red); }
 
     .modul:hover .modul-accent {
       transform: scaleX(1);
@@ -282,6 +287,11 @@
       .modul-btn {
         opacity: 0;
         transform: translateY(8px);
+      }
+        .modul-nummer {
+        font-size: 1.2rem;
+        font-weight: bolder;
+        letter-spacing: 0.15em;
       }
 
       .modul-line {

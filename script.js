@@ -6,11 +6,18 @@ function isMobile() {
 }
 
 moduls.forEach(modul => {
-  modul.addEventListener('click', () => {
+  modul.addEventListener('click', (e) => {
     if (!isMobile()) return;
+    e.stopPropagation(); // verhindert dass document-click sofort feuert
     moduls.forEach(m => m.classList.remove('active'));
     modul.classList.add('active');
   });
+});
+
+// Klick ausserhalb → alle zurücksetzen
+document.addEventListener('click', () => {
+  if (!isMobile()) return;
+  moduls.forEach(m => m.classList.remove('active'));
 });
 
 // Bei Resize: Desktop → active-Klassen entfernen

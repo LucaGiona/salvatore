@@ -28,6 +28,9 @@ window.addEventListener('resize', () => {
 });
 
 // ── Drawer ──
+// ── Drawer ──
+const backdrop = document.getElementById('drawer-backdrop');
+
 document.querySelectorAll('.modul-btn[data-drawer]').forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -37,11 +40,12 @@ document.querySelectorAll('.modul-btn[data-drawer]').forEach(btn => {
 
     // Alle Drawer schließen
     document.querySelectorAll('.drawer').forEach(d => d.classList.remove('open'));
+    backdrop.classList.remove('open');
 
     // Diesen öffnen wenn er zu war
     if (!isOpen) {
       drawer.classList.add('open');
-      drawer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      backdrop.classList.add('open');
     }
   });
 });
@@ -49,5 +53,12 @@ document.querySelectorAll('.modul-btn[data-drawer]').forEach(btn => {
 document.querySelectorAll('.drawer-close').forEach(btn => {
   btn.addEventListener('click', () => {
     btn.closest('.drawer').classList.remove('open');
+    backdrop.classList.remove('open');
   });
+});
+
+// Backdrop-Klick schließt Modal
+backdrop.addEventListener('click', () => {
+  document.querySelectorAll('.drawer').forEach(d => d.classList.remove('open'));
+  backdrop.classList.remove('open');
 });

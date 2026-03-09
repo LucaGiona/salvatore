@@ -8,9 +8,9 @@
     :root {
       --cream: #f5f0e8;
       --dark: #1a1611;
-      --red: #c0392b;
+      --red: #f46151;
       --white: #ffffff; 
-      --green: #66fa09;
+      --green: #5cbc20;
       --warm-gray: #8c7b6b;
       --gold: #b8976a;
       --orange: #f8b42d;
@@ -38,7 +38,7 @@
       font-size: 2.8rem;
       letter-spacing: 0.05em;
       text-transform: none;
-      color: var(--cream);
+      color: var(--green);
       margin-top: 12px;
       margin-bottom: 12px;
       font-style: italic;
@@ -53,6 +53,10 @@
       margin-top: 12px;
       margin-bottom: 12px;
       font-style: italic;
+    }
+
+    .section-underheader {
+      color: var(--red)
     }
 
     /* ── Module Grid ── */
@@ -356,25 +360,48 @@
       text-transform: uppercase;
     }
 
-    /* ── Drawer ── */
+    /* ── Drawer (schwebendes Modal) ── */
     .drawer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.96);
+      z-index: 100;
       background: #211c14;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      width: 50%;
-      margin-left: 0 auto;
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: 0 32px 80px rgba(0,0,0,0.75);
+      width: 90%;
+      max-width: 680px;
+      max-height: 80vh;
+      overflow-y: auto;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* Backdrop */
+    .drawer-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 8, 5, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 99;
+    }
+
+    .drawer-backdrop.open {
+      display: block;
     }
 
     .drawer.open {
-      max-height: 600px;
+      opacity: 1;
+      pointer-events: all;
+      transform: translate(-50%, -50%) scale(1);
     }
 
     .drawer-inner {
       padding: 48px 60px;
       position: relative;
-      max-width: 800px;
     }
 
     .drawer-close {

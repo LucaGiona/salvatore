@@ -1,80 +1,96 @@
 /* ═══════════════════════════════════════════
-   HOME.CSS — Sigismondo · Hauptseite
-   Dunkel, warm, neapolitanisch-elegant
+   ITALIAN.CSS — Sigismondo · Tradizione-Theme
+   Überschreibt nur Design-Tokens aus base.css.
+   Kein strukturelles CSS hier.
    ═══════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-  --accent:       #eb4734;   /* Rot */
-  --highlight:    #67df1c;   /* Grün für den Titel */
-  --font-display: 'Playfair Display', serif;
-  --font-body:    'Cormorant Garamond', serif;
+  --accent:     #b8976a;
+  --highlight:  #b8976a;
+  --dark:       #130f09;
+
+  --font-display: 'IM Fell English', serif;
+  --font-body:    'Libre Baskerville', serif;
+
+  /* Section-Header */
+  --header-size:         0.65rem;
+  --header-spacing:      0.35em;
+  --header-h1-size:      3.4rem;
+  --header-h1-spacing:   0.03em;
+  --header-h1-transform: none;
+  --header-h1-style:     italic;
+  --header-h1-color:     var(--cream);
+  --header-h3-size:      1.2rem;
+  --header-h3-spacing:   0.12em;
+  --header-h3-transform: none;
+  --header-h3-style:     normal;
+  --header-h3-color:     var(--accent);
+
+  /* Modul Typografie */
+  --modul-nummer-size:    0.7rem;
+  --modul-nummer-weight:  400;
+  --modul-nummer-spacing: 0.4em;
+  --modul-nummer-style:   italic;
+  --modul-titel-size:     clamp(1.8rem, 2.8vw, 2.8rem);
+  --modul-titel-style:    italic;
+  --modul-titel-weight:   400;
+  --modul-titel-top:      7rem;
+  --modul-text-size:      clamp(0.85rem, 1.1vw, 1rem);
+  --modul-text-style:     italic;
+  --modul-btn-size:       0.65rem;
+  --modul-btn-spacing:    0.25em;
+  --modul-btn-style:      italic;
+
+  /* Burger Nav */
+  --burger-link-size:  2rem;
+  --burger-link-style: italic;
+
+  /* Drawer */
+  --drawer-bg:           #1a1309;
+  --drawer-border:       rgba(184, 151, 106, 0.15);
+  --drawer-titel-style:  italic;
 }
 
-body {
-  font-family: var(--font-body);
+h1 {
+  color: rgb(251, 10, 50);
 }
 
-/* ── Section Header ── */
-.section-header {
-  text-align: center;
-  padding: 0px 20px 40px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  color: var(--red);
-}
-
+/* ── Section Header: dekorative Linie ── */
 .section-header h1 {
+  padding-bottom: 48px;
+  color: pink;
+}
+
+.section-header::after {
+  content: '— ✦ —';
   display: block;
-  font-family: var(--font-display);
-  font-size: 2.8rem;
-  
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--highlight);
-  margin-top: 22px;
-  margin-bottom: 12px;
-  font-style: bold;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  letter-spacing: 0.5em;
+  color: rgba(6, 254, 233, 0.35);
 }
 
-.section-header h3 {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--cream);
-  margin-top: 12px;
- 
-  font-style: normal;
-}
-.section-header h4 {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  letter-spacing: 0.1em;
-  text-transform: lowercase;
-  color: var(--red);
- 
-  margin-bottom: 12px;
-  font-style: normal;
+/* ── Burger Nav: wärmerer Hintergrund ── */
+.burger-nav {
+  background: rgba(15, 11, 7, 0.98);
+  border-left: 1px solid rgba(184, 151, 106, 0.15);
 }
 
-/* ── Modul Titel ── */
-.modul-titel {
-  font-family: var(--font-display);
-}
+/* ── Modul Accent-Farben ── */
+.modul:nth-child(1) .modul-accent { background: var(--accent); }
+.modul:nth-child(2) .modul-accent { background: rgba(184, 151, 106, 0.6); }
+.modul:nth-child(3) .modul-accent { background: var(--accent); }
 
-/* ── Accent Lines per Modul ── */
-.modul:nth-child(1) .modul-accent { background: #5dd115; }
-.modul:nth-child(2) .modul-accent { background: var(--white); }
-.modul:nth-child(3) .modul-accent { background: var(--red); }
-
-/* ── Storia + Events: Schriften ── */
+/* ── Storia & Events ── */
 .storia-titel,
-.events-titel,
-.drawer-titel {
-  font-family: var(--font-display);
-}
+.events-titel { font-style: italic; }
+
+.storia-line,
+.events-line  { background: var(--accent); }
+
+.drawer-titel { font-style: italic; }
+
+/* ── Gallery: engerer Gap ── */
+.gallery-grid { gap: 4px; }

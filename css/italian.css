@@ -1,152 +1,82 @@
 /* ═══════════════════════════════════════════
-   ITALIAN.CSS — Sigismondo · Tradizione
-   Klassisch, elegant, wie alte Trattoria-Schilder
+   HOME.CSS — Sigismondo · Home-Theme
+   Überschreibt nur Design-Tokens aus base.css.
+   Kein strukturelles CSS hier.
    ═══════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
 
 :root {
-  --accent:       #b8976a;   /* Gold */
-  --highlight:    #b8976a;
-  --font-display: 'IM Fell English', serif;
-  --font-body:    'Libre Baskerville', serif;
+  --accent:     #eb4734;
+  --highlight:  #67df1c;
 
-  /* Wärmerer, dunklerer Hintergrund */
-  --dark:         #130f09;
+  --font-display: 'Playfair Display', serif;
+  --font-body:    'Cormorant Garamond', serif;
+
+  /* Section-Header */
+  --header-h1-size:      2.8rem;
+  --header-h1-spacing:   0.18em;
+  --header-h1-transform: uppercase;
+  --header-h1-style:     normal;
+  --header-h1-color:     var(--highlight);
+  --header-h3-size:      1.8rem;
+  --header-h3-transform: uppercase;
+  --header-h3-style:     normal;
+  --header-h3-color:     var(--cream);
+
+  /* Modul Accent-Farben */
+  --modul-accent-1: #5dd115;
+  --modul-accent-2: var(--white);
+  --modul-accent-3: var(--red);
 }
 
-body {
-  font-family: var(--font-body);
-  background: var(--dark);
+/* Modul Accent-Farben (können nicht als Variable in nth-child verwendet werden) */
+.modul:nth-child(1) .modul-accent { background: #5dd115; }
+.modul:nth-child(2) .modul-accent { background: var(--white); }
+.modul:nth-child(3) .modul-accent { background: var(--red); }
+
+.storia-label, .events-label, .gallery-label{
+  font-size: 1.4rem;
+  color: var(--highlight)
+}
+.storia-text, .events-text{
+  color:white;
+  word-spacing: .3em;
+  font-size: 1.3rem;
 }
 
-/* ── Section Header ── */
-.section-header {
-  text-align: center;
-  padding: 0px 20px 48px;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  font-size: 0.65rem;
-  color: var(--accent);
+.numero01 {
+  color:#20fa07;
 }
-
-.section-header h1 {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 3.4rem;
-  letter-spacing: 0.03em;
-  text-transform: none;
-  color: var(--cream);
-  margin-top: 16px;
-  margin-bottom: 8px;
-  font-style: italic;
-  font-weight: 400;
+.numero03 {
+  color:var(--accent);
 }
-
-.section-header h3 {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  letter-spacing: 0.12em;
-  text-transform: none;
-  color: var(--accent);
-  margin-top: 6px;
-  margin-bottom: 12px;
-  font-style: normal;
-  font-weight: 400;
+.green {
+  background-color:var(--highlight);
+   width: 100%;
 }
-
-/* Dekorative Linie unter Header */
-.section-header::after {
-  content: '— ✦ —';
-  display: block;
-  margin-top: 20px;
-  font-size: 0.8rem;
-  letter-spacing: 0.5em;
-  color: rgba(184, 151, 106, 0.35);
+.white {
+  background-color:var(--white);
+   width: 100%;
 }
-
-/* ── Modul ── */
-.modul-nummer {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  letter-spacing: 0.4em;
-  font-weight: 400;
-  font-style: italic;
+.red, .storia-line, .events-line {
+  background-color:var(--accent);
+   width: 100%;
 }
-
-.modul-titel {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 2.8vw, 2.8rem);
-  font-style: italic;
-  font-weight: 400;
-  margin-top: 7rem;
-  letter-spacing: 0.01em;
-}
-
 .modul-text {
-  font-family: var(--font-body);
-  font-size: clamp(0.85rem, 1.1vw, 1rem);
-  font-style: italic;
-  font-weight: 400;
+  letter-spacing: .6px;
+  margin-bottom: 1em;
 }
-
-.modul-btn {
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  letter-spacing: 0.25em;
-  font-style: italic;
-}
-
-/* Gold Accent Lines */
-.modul:nth-child(1) .modul-accent { background: var(--accent); }
-.modul:nth-child(2) .modul-accent { background: rgba(184, 151, 106, 0.6); }
-.modul:nth-child(3) .modul-accent { background: var(--accent); }
-
-.modul-line {
-  background: var(--accent);
-}
-
-/* ── Burger Nav ── */
-.burger-nav {
-  background: rgba(15, 11, 7, 0.98);
-  border-left: 1px solid rgba(184, 151, 106, 0.15);
-}
-
-.burger-nav-link {
-  font-family: var(--font-display);
+.cash{
+  margin-top: 4rem;
+  color:var(--gold);
+  text-align: center;
+  font-style: bold;
   font-size: 2rem;
-  font-style: italic;
 }
 
-.burger-nav-link::after {
-  background: var(--accent);
-}
-
-/* ── Storia & Events Titel ── */
-.storia-titel,
-.events-titel {
-  font-family: var(--font-display);
-  font-style: italic;
-}
-
-.drawer-titel {
-  font-family: var(--font-display);
-  font-style: italic;
-}
-
-.storia-line,
-.events-line {
-  background: var(--accent);
-}
-
-/* Drawer Hintergrund wärmer */
-.drawer {
-  background: #1a1309;
-  border-color: rgba(184, 151, 106, 0.15);
-}
-
-/* ── Galerie: goldener Rahmen ── */
-.gallery-grid {
-  gap: 4px;
+.section-storia, .section-events, .section-gallery {
+  padding: 100px 20px;
+  background: var(--dark);
+  border-top: 4px solid rgba(185, 249, 8, 0.132);
 }

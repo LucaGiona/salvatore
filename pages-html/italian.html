@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bar Salumeria Sigismondo</title>
   <link rel="stylesheet" href="/css/base.css">
-  <link rel="stylesheet" href="/css/italian.css">
+  <link rel="stylesheet" href="/css/home.css">
   <script src="/js/burger.js" defer></script>
   <script src="/js/script.js" defer></script>
 </head>
 <body>
+
+  <!-- ── Burger Label (entfernen wenn nicht mehr nötig) ── -->
+  <div class="burger-label">Verschiedene Versionen</div>
 
   <!-- ── Burger Button ── -->
   <button class="burger-btn" id="burger-btn" aria-label="Menü öffnen">
@@ -22,9 +25,9 @@
   <nav class="burger-nav" id="burger-nav">
     <div class="burger-nav-label">Unsere Welten</div>
     <ul class="burger-nav-links">
-      <li><a href="../index.html"   class="burger-nav-link">Home</a></li>
-      <li><a href="/pages-html/pop.html"     class="burger-nav-link">Pop</a></li>
-      <li><a href="/pages-html/italian.html" class="burger-nav-link">Italian</a></li>
+      <li><a href="../index.html" class="burger-nav-link">Home</a></li>
+      <li><a href="pop.html"   class="burger-nav-link">Pop</a></li>
+      <li><a href="italian.html" class="burger-nav-link">Italian</a></li>
     </ul>
     <div class="burger-nav-divider"></div>
     <div class="burger-nav-footer">
@@ -34,9 +37,10 @@
     </div>
   </nav>
 
+  <!-- ── Burger Overlay ── -->
   <div class="burger-overlay" id="burger-overlay"></div>
 
-  <!-- ── Dein Inhalt hier ── -->
+
   <div class="section-header">
     <h1>Sigismondo</h1>
     <h3>Caffè Bar Salumeria</h3>
@@ -46,9 +50,153 @@
     cash only
   </div>
 
-  <!-- Module, Sektionen etc. hier einfügen (gleiche Struktur wie index.html) -->
+  <div class="modules">
+
+    <!-- Modul 1 -->
+    <div class="modul">
+      <img class="modul-bg" src="/assets/vespa_gruen3_800.webp" alt="Bar">
+      <div class="placeholder-icon">🍷</div>
+      <div class="modul-accent"></div>
+      <div class="modul-overlay"></div>
+      <div class="modul-arrow">→</div>
+      <div class="modul-content">
+        <div class="modul-nummer">01 — <br>Cafè Bar</div>
+        <h2 class="modul-titel">La Bella<br>Giornata</h2>
+        <div class="modul-line"></div>
+        <p class="modul-text">Neapolitanischer Caffè, Espresso und die Energie eines echten italienischen Morgens.</p>
+        <button class="modul-btn" data-drawer="drawer-1">Mehr erfahren →</button>
+      </div>
+    </div>
+
+    <!-- Modul 2 -->
+    <div class="modul">
+      <img class="modul-bg" src="/assets/vespa_weiss_800.webp" alt="Salumeria">
+      <div class="placeholder-icon">🧀</div>
+      <div class="modul-accent"></div>
+      <div class="modul-overlay"></div>
+      <div class="modul-arrow">→</div>
+      <div class="modul-content">
+        <div class="modul-nummer">02 — <br>Mittags&shy;tisch</div>
+        <h2 class="modul-titel">Tradizione<br>Italiana</h2>
+        <div class="modul-line"></div>
+        <p class="modul-text">Feinkost direkt aus Italien – Salumi, Formaggi und kleine Köstlichkeiten für jeden Anlass.</p>
+        <button class="modul-btn" data-drawer="drawer-2">Sortiment ansehen →</button>
+      </div>
+    </div>
+
+    <!-- Modul 3 -->
+    <div class="modul">
+      <img class="modul-bg" src="/assets/vespa_rot2-800.webp" alt="Location">
+      <div class="placeholder-icon">📍</div>
+      <div class="modul-accent"></div>
+      <div class="modul-overlay"></div>
+      <div class="modul-arrow">→</div>
+      <div class="modul-content">
+        <div class="modul-nummer">03 — <br>Besuche uns</div>
+        <h2 class="modul-titel">Kopenhagener<br>Straße</h2>
+        <div class="modul-line"></div>
+        <button class="modul-btn" data-drawer="drawer-3">Anfahrt & Öffnungszeiten →</button>
+        <p class="modul-text">Mitten in Berlin – komm vorbei, setz dich und lass den Abend bei uns ausklingen.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── Sektion: Geschichte ── -->
+  <section class="section-storia">
+    <div class="storia-inner">
+      <div class="storia-label">La Storia</div>
+      <h2 class="storia-titel">Ein bisschen<br>Geschichte</h2>
+      <div class="storia-line"></div>
+      <p class="storia-text">Salvatore stammt aus Neapel und hat Salumeria im Blut. Schon als Kind hat er in der Salumeria seines Onkels und seiner Oma – der <em>Salumeria Sigismondo</em> – mitgeholfen. Die schönen Erinnerungen aus dieser Zeit brachten Salvatore auf die Idee, eine eigene Salumeria zu eröffnen. Damit auch seine Gäste die gleichen frischen und liebevoll zubereiteten Pastagerichte, Wurst- und Käsespezialitäten und vor allem Caffé und Dolci genießen können. Und das mitten in Prenzlauer Berg.</p>
+      <p class="storia-text storia-invite">Um die ganze Geschichte zu erfahren, bist Du herzlich eingeladen, Salvatore in der Bar Salumeria Sigismondo zu besuchen, die Ahnentafel zu bestaunen und dabei neapolitanische Spezialitäten zu genießen.</p>
+    </div>
+  </section>
+
+  <!-- ── Sektion: Events ── -->
+  <section class="section-events">
+    <div class="events-inner">
+      <div class="events-label">Eventi Privati</div>
+      <h2 class="events-titel">Geburtstage &<br>besondere Anlässe</h2>
+      <div class="events-line"></div>
+      <p class="events-text">Ihr sucht einen besonderen Ort für euren Anlass? Die Bar Salumeria Sigismondo lässt sich für private Feiern, Geburtstage und Firmenevents reservieren. Schreibt uns einfach – wir melden uns zurück.</p>
+      <a href="/cdn-cgi/l/email-protection#c4a7abaab0a5b0b0ab84a6a5b6b7ada3adb7a9abaaa0abeaa7aba9" class="events-btn">Anfrage senden →</a>
+    </div>
+  </section>
+
+  <!-- ── Sektion: Galerie ── -->
+  <section class="section-gallery">
+    <div class="gallery-label">Galleria</div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="/assets/koffer.JPG" alt="Sigismondo"></div>
+      <div class="gallery-item"><img src="/assets/kanne_fenster.JPG" alt="Sigismondo"></div>
+      <div class="gallery-item"><img src="/assets/laFamiglia.JPG" alt="Sigismondo"></div>
+      <div class="gallery-item"><img src="/assets/vespa_800.webp" alt="Sigismondo"></div>
+      <div class="gallery-item"><img src="/assets/tomaten.JPG" alt="Sigismondo"></div>
+      <div class="gallery-item"><img src="/assets/mittagstisch.JPG" alt="Sigismondo"></div>
+    </div>
+  </section>
+
+  <footer>
+    <h1>Impressum & Datenschutz</h1>
+  </footer>
 
   <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <!-- Drawer 1 -->
+  <div class="drawer" id="drawer-1">
+    <div class="drawer-inner">
+      <button class="drawer-close">✕</button>
+      <h3 class="drawer-titel">01 — Cafè Bar</h3>
+      <div class="drawer-content">
+        <p><em>Sfogliatelle, Cornetti, Codine, Tartelle al Limone, Cannoli …</em><br>
+        Ab 8.30 Uhr morgens den Tag mit italienischen Leckereien und typisch neapolitanischem Caffé versüßen.</p>
+        <p>Panini, Antipasti, Toast …<br>
+        Frisch belegtes Panino aus unserer Frischetheke oder ein kleiner Antipastiteller mit italienischen Wurst- und Käsespezialitäten.</p>
+        <p><em>Getränke</em><br>
+        Neapolitanischer Caffé, frisch gepresste Säfte, Aperitivi, Chinotto, Lemonsoda und vieles mehr.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer 2 -->
+  <div class="drawer" id="drawer-2">
+    <div class="drawer-inner">
+      <button class="drawer-close">✕</button>
+      <h3 class="drawer-titel">02 — Mittagstisch</h3>
+      <div class="drawer-content">
+        <p>Wir haben eine täglich wechselnde Mittagskarte – eine Auswahl zwischen Suppe, drei Pastagerichten, verschiedenen Salaten und weiteren Vorspeisen. Alle Gerichte selbstverständlich auch für außer Haus.</p>
+        <p><em>Antipasti</em><br>
+        Insalatina di contorno <span style="color: var(--warm-gray)">— Beilagensalat</span><br>
+        Insalata ai frutti di mare <span style="color: var(--warm-gray)">— Meeresfrüchtesalat</span><br>
+        Ribollita <span style="color: var(--warm-gray)">— typische toskanische Suppe</span></p>
+        <p><em>Pasta</em><br>
+        Penne con melanzane, pomodorini freschi e ricotta salata<br>
+        Spaghetti con sugo di polipetti<br>
+        Lasagne con ragú di salsiccia</p>
+        <p><em>Dolci</em><br>
+        Tiramisú · Profiteroles</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer 3 -->
+  <div class="drawer" id="drawer-3">
+    <div class="drawer-inner">
+      <button class="drawer-close">✕</button>
+      <h3 class="drawer-titel">03 — Besuche uns</h3>
+      <div class="drawer-content">
+        <p><em>Adresse</em><br>
+        <a href="https://www.google.com/maps/place/Bar+Salumeria+Sigismondo/@52.54903,13.4089754,630m" target="_blank" class="maps-link">Kopenhagener Straße 14 · 10437 Berlin · Prenzlauer Berg →</a></p>
+        <p>Öffnungszeiten<br>
+        Mo – Fr: 8.30 – 20.00 Uhr<br>
+        Sa – So: 9.00 – 18.00 Uhr</p>
+        <p><em>Anfahrt</em><br>
+        U-Bahn Schönhauser Allee (U2) oder S-Bahn Prenzlauer Allee (S8/S9) · Tram M2 Haltestelle Kopenhagener Straße</p>
+        <p>Wir freuen uns auf dich — <em>cash only.</em></p>
+       </div>
+    </div>
+  </div>
 
 </body>
 </html>

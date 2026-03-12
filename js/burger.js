@@ -36,6 +36,3 @@ document.querySelectorAll('.burger-nav-link').forEach(link => {
     link.classList.add('active');
   }
 });
-
-
-

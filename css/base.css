@@ -722,3 +722,86 @@ footer h1 {
   .drawer-inner { padding: 32px 24px; }
 }
 
+
+/* ══════════════════════════════════════
+   BURGER HINT — Erster Besuch
+   ══════════════════════════════════════ */
+
+/* Tooltip */
+.burger-hint {
+  position: fixed;
+  top: 22px;
+  right: 82px;               /* links vom Burger-Button */
+  z-index: 201;
+  background: rgba(20, 16, 11, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: var(--cream);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+/* Kleiner Pfeil rechts */
+.burger-hint::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background: rgba(20, 16, 11, 0.92);
+  border-top: 1px solid rgba(255,255,255,0.10);
+  border-right: 1px solid rgba(255,255,255,0.10);
+}
+
+.burger-hint.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Pulse-Ring */
+@keyframes burger-pulse {
+  0%   { box-shadow: 0 0 0 0px rgba(245, 240, 232, 0.4); }
+  70%  { box-shadow: 0 0 0 10px rgba(245, 240, 232, 0); }
+  100% { box-shadow: 0 0 0 0px rgba(245, 240, 232, 0); }
+}
+
+.burger-btn.pulse {
+  animation: burger-pulse 1.5s ease-out infinite;
+}
+
+
+/* ══════════════════════════════════════
+   BURGER LABEL — statischer Hint
+   ══════════════════════════════════════ */
+
+.burger-label {
+  position: fixed;
+  top: 28px;
+  right: 82px;
+  z-index: 200;
+  color: rgba(245, 240, 232, 0.55);
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+  /* kleiner Pfeil rechts */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.burger-label::after {
+  content: '→';
+  font-size: 0.8rem;
+  color: rgba(245, 240, 232, 0.35);
+}

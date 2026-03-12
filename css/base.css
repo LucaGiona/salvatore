@@ -64,7 +64,7 @@
   /* Drawer Typografie-Hook */
   --drawer-bg:            #211c14;
   --drawer-border:        rgba(255,255,255,0.10);
-  --drawer-titel-style:   italic;
+  --drawer-titel-style:   bold;
 }
 
 
@@ -411,7 +411,7 @@ body {
     160px   /* Label */
     18px   /* Titel */
     24px   /* Linie */
-    1fr    /* Beschreibung */
+    3fr    /* Beschreibung */
     auto;  /* Button */
   align-content: end;
   transform: translateY(8px);
@@ -690,8 +690,9 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.96);
   z-index: 100;
-  background: var(--drawer-bg);
-  border: 1px solid var(--drawer-border);
+  background: rgba(17, 11, 11, 0.764);
+  border: 2px solid var(--drawer-border);
+  border-radius: 5%;
   box-shadow: 0 32px 80px rgba(0,0,0,0.75);
   width: 90%;
   max-width: 680px;
@@ -706,7 +707,7 @@ body {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(10, 8, 5, 0.7);
+  background: rgba(74, 66, 53, 0.7);
   backdrop-filter: blur(4px);
   z-index: 99;
 }
@@ -728,7 +729,7 @@ body {
   background: none;
   border: none;
   color: var(--warm-gray);
-  font-size: 1rem;
+  font-size: 2rem;
   cursor: pointer;
   letter-spacing: 0.1em;
   transition: color 0.2s;
@@ -739,18 +740,18 @@ body {
 .drawer-titel {
   font-family: var(--font-display);
   font-style: var(--drawer-titel-style);
-  font-size: 1.1rem;
-  color: var(--cream);
+  font-size: 1.5rem;
+  color: var(--white);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
   opacity: 0.6;
 }
 
 .drawer-content p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.8;
-  color: rgba(245, 240, 232, 0.75);
+  color: rgba(255, 255, 255, 0.933);
   font-weight: 300;
   margin-bottom: 1em;
 }

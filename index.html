@@ -23,18 +23,14 @@
 
   <!-- ── Burger Nav Panel ── -->
   <nav class="burger-nav" id="burger-nav">
-    <div class="burger-nav-label">Unsere Welten</div>
+    <div class="burger-nav-label">Zu den unterschiedlichen Seiten</div>
     <ul class="burger-nav-links">
-      <li><a href="index.html" class="burger-nav-link">Home</a></li>
+      <li><a href="../index.html" class="burger-nav-link">Home</a></li>
       <li><a href="/pages-html/pop.html"   class="burger-nav-link">Pop</a></li>
       <li><a href="/pages-html/italian.html" class="burger-nav-link">Italian</a></li>
     </ul>
     <div class="burger-nav-divider"></div>
-    <div class="burger-nav-footer">
-      Bar Salumeria Sigismondo<br>
-      Kopenhagener Str. 14 · Berlin<br>
-      Cash only
-    </div>
+ 
   </nav>
 
   <!-- ── Burger Overlay ── -->
@@ -43,11 +39,12 @@
 
   <div class="section-header">
     <h1>Sigismondo</h1>
-    <h3>Caffè Bar Salumeria</h3>
+    <h3>Caffè Bar</h3>
     <br>
-    Entdecke uns
-    <br><br>
-    cash only
+    <br>
+    <h4>Entdecke uns</h4>
+    <br>
+   
   </div>
 
   <div class="modules">
@@ -60,9 +57,9 @@
       <div class="modul-overlay"></div>
       <div class="modul-arrow">→</div>
       <div class="modul-content">
-        <div class="modul-nummer">Cafè Bar</div>
+        <div class="modul-nummer numero01">Cafè Bar</div>
         <h2 class="modul-titel">La Bella<br>Giornata</h2>
-        <div class="modul-line"></div>
+        <div class="modul-line green"></div>
         <p class="modul-text">Neapolitanischer Caffè, Espresso und die Energie eines echten italienischen Morgens.</p>
         <button class="modul-btn" data-drawer="drawer-1">Mehr erfahren →</button>
       </div>
@@ -78,7 +75,7 @@
       <div class="modul-content">
         <div class="modul-nummer">Mittagstisch</div>
         <h2 class="modul-titel">Tradizione<br>Italiana</h2>
-        <div class="modul-line"></div>
+        <div class="modul-line white"></div>
         <p class="modul-text">Feinkost direkt aus Italien – Salumi, Formaggi und kleine Köstlichkeiten für jeden Anlass.</p>
         <button class="modul-btn" data-drawer="drawer-2">Sortiment ansehen →</button>
       </div>
@@ -92,9 +89,9 @@
       <div class="modul-overlay"></div>
       <div class="modul-arrow">→</div>
       <div class="modul-content">
-        <div class="modul-nummer">Besuche uns</div>
+        <div class="modul-nummer numero03">Besuche uns</div>
         <h2 class="modul-titel">Kopenhagener<br>Straße</h2>
-        <div class="modul-line"></div>
+        <div class="modul-line red"></div>
         <p class="modul-text">Mitten in Berlin – komm vorbei, setz dich und lass den Abend bei uns ausklingen.</p>
         <button class="modul-btn" data-drawer="drawer-3">Anfahrt & Öffnungszeiten →</button>
       </div>
@@ -121,7 +118,10 @@
       <div class="events-line"></div>
       <p class="events-text">Ihr sucht einen besonderen Ort für euren Anlass? Die Bar Salumeria Sigismondo lässt sich für private Feiern, Geburtstage und Firmenevents reservieren. Schreibt uns einfach – wir melden uns zurück.</p>
       <a href="/cdn-cgi/l/email-protection#c4a7abaab0a5b0b0ab84a6a5b6b7ada3adb7a9abaaa0abeaa7aba9" class="events-btn">Anfrage senden →</a>
+      <br>
+      <h1 class="events-label cash">Cash Only</h1>
     </div>
+   
   </section>
 
   <!-- ── Sektion: Galerie ── -->
@@ -147,7 +147,7 @@
   <div class="drawer" id="drawer-1">
     <div class="drawer-inner">
       <button class="drawer-close">✕</button>
-      <h3 class="drawer-titel">01 — Cafè Bar</h3>
+      <h3 class="drawer-titel">Cafè Bar</h3>
       <div class="drawer-content">
         <p><em>Sfogliatelle, Cornetti, Codine, Tartelle al Limone, Cannoli …</em><br>
         Ab 8.30 Uhr morgens den Tag mit italienischen Leckereien und typisch neapolitanischem Caffé versüßen.</p>
@@ -163,9 +163,12 @@
   <div class="drawer" id="drawer-2">
     <div class="drawer-inner">
       <button class="drawer-close">✕</button>
-      <h3 class="drawer-titel">02 — Mittagstisch</h3>
+      <h3 class="drawer-titel">Mittagstisch</h3>
       <div class="drawer-content">
         <p>Wir haben eine täglich wechselnde Mittagskarte – eine Auswahl zwischen Suppe, drei Pastagerichten, verschiedenen Salaten und weiteren Vorspeisen. Alle Gerichte selbstverständlich auch für außer Haus.</p>
+        <br>
+        <h2>Beispielkarte:</h2>
+        <br>
         <p><em>Antipasti</em><br>
         Insalatina di contorno <span style="color: var(--warm-gray)">— Beilagensalat</span><br>
         Insalata ai frutti di mare <span style="color: var(--warm-gray)">— Meeresfrüchtesalat</span><br>
@@ -184,15 +187,15 @@
   <div class="drawer" id="drawer-3">
     <div class="drawer-inner">
       <button class="drawer-close">✕</button>
-      <h3 class="drawer-titel">03 — Besuche uns</h3>
-      <div class="drawer-content">
-        <p><em>Adresse</em><br>
+      <h3 class="drawer-titel">Besuche uns</h3>
+      <div class="drawer-content addresse">
+        <p><em>Adresse</em>link zu googleMaps<br>
         <a href="https://www.google.com/maps/place/Bar+Salumeria+Sigismondo/@52.54903,13.4089754,630m" target="_blank" class="maps-link">Kopenhagener Straße 14 · 10437 Berlin · Prenzlauer Berg →</a></p>
         <p>Öffnungszeiten<br>
-        Mo – Fr: 8.30 – 20.00 Uhr<br>
-        Sa – So: 9.00 – 18.00 Uhr</p>
+        Mo – Fr: 8.30 – 16.30 Uhr<br>
+        Sa – So: 9.00 – 16.00 Uhr</p>
         <p><em>Anfahrt</em><br>
-        U-Bahn Schönhauser Allee (U2) oder S-Bahn Prenzlauer Allee (S8/S9) · Tram M2 Haltestelle Kopenhagener Straße</p>
+        U-Bahn Schönhauser Allee (U2) oder S-Bahn Schönhauserallee (S41/S42) · Tram M1 Haltestelle Schönhauserallee</p>
         <p>Wir freuen uns auf dich — <em>cash only.</em></p>
        </div>
     </div>

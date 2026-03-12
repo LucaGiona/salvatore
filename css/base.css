@@ -406,8 +406,14 @@ body {
   inset: 0;
   z-index: 3;
   padding: 16px 36px 36px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows:
+    160px   /* Label */
+    18px   /* Titel */
+    24px   /* Linie */
+    1fr    /* Beschreibung */
+    auto;  /* Button */
+  align-content: end;
   transform: translateY(8px);
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -421,9 +427,10 @@ body {
   letter-spacing: var(--modul-nummer-spacing);
   text-transform: uppercase;
   color: var(--white);
-  margin-top: 5px;
-  margin-bottom: 4rem;
   white-space: nowrap;
+  margin: 0;
+  display: flex;
+  align-items: start;
 }
 
 .modul-titel {
@@ -434,6 +441,10 @@ body {
   margin-top: var(--modul-titel-top);
   line-height: 1.15;
   color: var(--cream);
+  margin: 0;
+  display: flex;
+  align-items: start;
+
 }
 
 .modul-text {
@@ -443,15 +454,19 @@ body {
   color: rgba(255, 255, 255, 0.96);
   font-weight: 300;
   max-width: 340px;
+  margin: 0;
+  align-self: start;
 }
 
 .modul-line {
-  width: 40px;
+  width: 100%;
+  max-width: 100%;
   height: 1px;
   background: var(--accent);
-  margin: 16px 0;
+  margin: 0;
   transform: scaleX(1);
   transform-origin: left;
+  align-self: center;
 }
 
 .modul-btn {
@@ -466,6 +481,7 @@ body {
   border: none;
   padding-bottom: 3px;
   cursor: pointer;
+  align-self: start;
 }
 
 .modul-btn:hover { color: var(--highlight); }

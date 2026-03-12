@@ -7,7 +7,7 @@
 
 :root {
   --accent:       #eb4734;   /* Rot */
-  --highlight:    #5dd115;   /* Grün für den Titel */
+  --highlight:    #67df1c;   /* Grün für den Titel */
   --font-display: 'Playfair Display', serif;
   --font-body:    'Cormorant Garamond', serif;
 }
@@ -30,24 +30,36 @@ body {
   display: block;
   font-family: var(--font-display);
   font-size: 2.8rem;
-  letter-spacing: 0.05em;
-  text-transform: none;
+  
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: var(--highlight);
-  margin-top: 12px;
+  margin-top: 22px;
   margin-bottom: 12px;
-  font-style: italic;
+  font-style: bold;
 }
 
 .section-header h3 {
   display: block;
   font-family: var(--font-display);
   font-size: 1.8rem;
-  letter-spacing: 0.05em;
-  text-transform: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--cream);
   margin-top: 12px;
+ 
+  font-style: normal;
+}
+.section-header h4 {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  color: var(--red);
+ 
   margin-bottom: 12px;
-  font-style: italic;
+  font-style: normal;
 }
 
 /* ── Modul Titel ── */

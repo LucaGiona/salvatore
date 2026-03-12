@@ -4,21 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bar Salumeria Sigismondo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="/script.js" defer></script>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <script src="/js/burger.js" defer></script>
+  <script src="/js/script.js" defer></script>
 </head>
 <body>
 
+  <!-- ── Burger Button ── -->
+  <button class="burger-btn" id="burger-btn" aria-label="Menü öffnen">
+    <span class="burger-line"></span>
+    <span class="burger-line"></span>
+    <span class="burger-line"></span>
+  </button>
+
+  <!-- ── Burger Nav Panel ── -->
+  <nav class="burger-nav" id="burger-nav">
+    <div class="burger-nav-label">Unsere Welten</div>
+    <ul class="burger-nav-links">
+      <li><a href="index.html" class="burger-nav-link">Home</a></li>
+      <li><a href="/pages-html/pop.html"   class="burger-nav-link">Pop</a></li>
+      <li><a href="/pages-html/italian.html" class="burger-nav-link">Italian</a></li>
+    </ul>
+    <div class="burger-nav-divider"></div>
+    <div class="burger-nav-footer">
+      Bar Salumeria Sigismondo<br>
+      Kopenhagener Str. 14 · Berlin<br>
+      Cash only
+    </div>
+  </nav>
+
+  <!-- ── Burger Overlay ── -->
+  <div class="burger-overlay" id="burger-overlay"></div>
+
+
   <div class="section-header">
     <h1>Sigismondo</h1>
-  
-    <h3>Caffè Bar Salumeria </h3>
+    <h3>Caffè Bar Salumeria</h3>
     <br>
-      Entdecke uns
-      <br>
-      <br>
-      cash only
+    Entdecke uns
+    <br><br>
+    cash only
   </div>
 
   <div class="modules">
@@ -34,7 +60,7 @@
         <div class="modul-nummer">01 — <br>Cafè Bar</div>
         <h2 class="modul-titel">La Bella<br>Giornata</h2>
         <div class="modul-line"></div>
-        <p class="modul-text">Neapolitanischer Caffè, Espresso und die Energie eines echten italienischen Morgens.</p>        
+        <p class="modul-text">Neapolitanischer Caffè, Espresso und die Energie eines echten italienischen Morgens.</p>
         <button class="modul-btn" data-drawer="drawer-1">Mehr erfahren →</button>
       </div>
     </div>
@@ -47,8 +73,7 @@
       <div class="modul-overlay"></div>
       <div class="modul-arrow">→</div>
       <div class="modul-content">
-        <div class="modul-nummer">02 — <br> Mittags&shy;tisch</div>
-        <div></div>
+        <div class="modul-nummer">02 — <br>Mittags&shy;tisch</div>
         <h2 class="modul-titel">Tradizione<br>Italiana</h2>
         <div class="modul-line"></div>
         <p class="modul-text">Feinkost direkt aus Italien – Salumi, Formaggi und kleine Köstlichkeiten für jeden Anlass.</p>
@@ -64,19 +89,13 @@
       <div class="modul-overlay"></div>
       <div class="modul-arrow">→</div>
       <div class="modul-content">
-        <div class="modul-nummer">03 — <br>Besuche uns
-          
-        </div>
-          
+        <div class="modul-nummer">03 — <br>Besuche uns</div>
         <h2 class="modul-titel">Kopenhagener<br>Straße</h2>
         <div class="modul-line"></div>
         <button class="modul-btn" data-drawer="drawer-3">Anfahrt & Öffnungszeiten →</button>
         <p class="modul-text">Mitten in Berlin – komm vorbei, setz dich und lass den Abend bei uns ausklingen.</p>
-        
       </div>
     </div>
-
-    
 
   </div>
 
@@ -121,7 +140,7 @@
 
   <div class="drawer-backdrop" id="drawer-backdrop"></div>
 
-  <!-- Drawer Modul 1 -->
+  <!-- Drawer 1 -->
   <div class="drawer" id="drawer-1">
     <div class="drawer-inner">
       <button class="drawer-close">✕</button>
@@ -137,7 +156,7 @@
     </div>
   </div>
 
-  <!-- Drawer Modul 2 -->
+  <!-- Drawer 2 -->
   <div class="drawer" id="drawer-2">
     <div class="drawer-inner">
       <button class="drawer-close">✕</button>
@@ -149,8 +168,8 @@
         Insalata ai frutti di mare <span style="color: var(--warm-gray)">— Meeresfrüchtesalat</span><br>
         Ribollita <span style="color: var(--warm-gray)">— typische toskanische Suppe</span></p>
         <p><em>Pasta</em><br>
-        Penne con melanzane, pomodorini freschi e ricotta salata <span style="color: var(--warm-gray)">— mit Aubergine, frischen Tomaten und Ricottakäse</span><br>
-        Spaghetti con sugo di polipetti <span style="color: var(--warm-gray)">— mit Oktopus in Tomatensauce</span><br>
+        Penne con melanzane, pomodorini freschi e ricotta salata<br>
+        Spaghetti con sugo di polipetti<br>
         Lasagne con ragú di salsiccia</p>
         <p><em>Dolci</em><br>
         Tiramisú · Profiteroles</p>
@@ -158,14 +177,14 @@
     </div>
   </div>
 
-  <!-- Drawer Modul 3 -->
+  <!-- Drawer 3 -->
   <div class="drawer" id="drawer-3">
     <div class="drawer-inner">
       <button class="drawer-close">✕</button>
       <h3 class="drawer-titel">03 — Besuche uns</h3>
       <div class="drawer-content">
         <p><em>Adresse</em><br>
-        <a href="https://www.google.com/maps/place/Bar+Salumeria+Sigismondo/@52.54903,13.4089754,630m/data=!3m1!1e3!4m14!1m7!3m6!1s0x47a85204160d91d3:0xae6cdf33a8803088!2sBar+Salumeria+Sigismondo!8m2!3d52.5490268!4d13.4115503!16s%2Fg%2F1hc1f7gr3!3m5!1s0x47a85204160d91d3:0xae6cdf33a8803088!8m2!3d52.5490268!4d13.4115503!16s%2Fg%2F1hc1f7gr3?entry=ttu&g_ep=EgoyMDI2MDMwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="maps-link">Kopenhagener Straße 14 · 10437 Berlin · Prenzlauer Berg →</a></p>
+        <a href="https://www.google.com/maps/place/Bar+Salumeria+Sigismondo/@52.54903,13.4089754,630m" target="_blank" class="maps-link">Kopenhagener Straße 14 · 10437 Berlin · Prenzlauer Berg →</a></p>
         <p>Öffnungszeiten<br>
         Mo – Fr: 8.30 – 20.00 Uhr<br>
         Sa – So: 9.00 – 18.00 Uhr</p>

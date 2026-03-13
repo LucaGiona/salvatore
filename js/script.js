@@ -22,6 +22,16 @@ document.querySelectorAll('.modul-arrow').forEach(arrow => {
   });
 });
 
+// Klick auf Bild → Drawer öffnen (nur Mobile/Tablet ≤1020px)
+document.querySelectorAll('.modul-bg').forEach(img => {
+  img.style.pointerEvents = 'auto';
+  img.addEventListener('click', () => {
+    if (window.innerWidth > 1020) return;
+    const drawerId = img.closest('.modul').querySelector('[data-drawer]').getAttribute('data-drawer');
+    openDrawer(drawerId);
+  });
+});
+
 // Klick auf "Mehr erfahren" Button → Drawer öffnen
 document.querySelectorAll('.modul-btn[data-drawer]').forEach(btn => {
   btn.addEventListener('click', () => {

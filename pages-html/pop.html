@@ -12,7 +12,7 @@
 <body>
 
 
-    <div class="burger-label">Verschiedene Versionen</div>
+    <div class="burger-label"><span class="burger-label-text">Verschiedene Versionen</span></div>
   <!-- ── Burger Button ── -->
   <button class="burger-btn" id="burger-btn" aria-label="Menü öffnen">
     
@@ -23,7 +23,7 @@
 
   <!-- ── Burger Nav Panel ── -->
   <nav class="burger-nav" id="burger-nav">
-    <div class="burger-nav-label">Unsere Welten</div>
+    <div class="burger-nav-label"><span class="burger-nav-label-text">Unsere Welten</span></div>
     <ul class="burger-nav-links">
       <li><a href="../index.html" class="burger-nav-link">Home</a></li>
       <li><a href="pop.html"   class="burger-nav-link">Pop</a></li>
@@ -31,9 +31,9 @@
     </ul>
     <div class="burger-nav-divider"></div>
     <div class="burger-nav-footer">
-      Bar Salumeria Sigismondo<br>
-      Kopenhagener Str. 14 · Berlin<br>
-      Cash only
+      <span class="burger-nav-footer-name">Bar Salumeria Sigismondo</span><br>
+      <span class="burger-nav-footer-adresse">Kopenhagener Str. 14 · Berlin</span><br>
+      <span class="burger-nav-footer-hinweis">Cash only</span>
     </div>
   </nav>
 
@@ -41,12 +41,12 @@
 
   <!-- ── Dein Inhalt hier ── -->
   <div class="section-header">
-    <h1>Sigismondo</h1>
-    <h3>Caffè Bar </h3>
+    <h1 class="header-titel">Sigismondo</h1>
+    <h3 class="header-untertitel">Caffè Bar</h3>
     <br>
-    Entdecke uns
+    <span class="header-cta">Entdecke uns</span>
     <br><br>
-    cash only
+    <span class="header-hinweis">cash only</span>
   </div>
 
   <!-- Module, Sektionen etc. hier einfügen (gleiche Struktur wie index.html) -->
@@ -54,13 +54,13 @@
 
     <!-- Modul 1 -->
     <div class="modul">
-      <img class="modul-bg" src="/assets/vespa-azul.webp" alt="Bar">
+      <img class="modul-bg" src="/assets/Vespa-dunkelblau.webp" alt="Bar">
       <div class="placeholder-icon">🍷</div>
       <div class="modul-accent"></div>
       <div class="modul-overlay"></div>
       <div class="modul-arrow" data-drawer="drawer-1">→</div>
       <div class="modul-content">
-        <div class="modul-nummer numero01">Cafè Bar</div>
+        <div class="modul-nummer numero01"><span class="modul-nummer-text">Cafè Bar</span></div>
           <h2 class="modul-titel modul-titel-split">
             <span class="titolo-top line-first">La Bella</span>
             <span class="titolo-bottom">Giornata</span>
@@ -72,13 +72,13 @@
 
     <!-- Modul 2 -->
     <div class="modul">
-      <img class="modul-bg" src="/assets/vespa-olive.webp" alt="Salumeria">
+      <img class="modul-bg" src="/assets/Vespa-hellblau.webp" alt="Salumeria">
       <div class="placeholder-icon">🧀</div>
       <div class="modul-accent"></div>
       <div class="modul-overlay"></div>
       <div class="modul-arrow" data-drawer="drawer-2">→</div>
       <div class="modul-content">
-        <div class="modul-nummer">Mittagstisch</div>
+        <div class="modul-nummer"><span class="modul-nummer-text">Mittagstisch</span></div>
           <h2 class="modul-titel modul-titel-split">
             <span class="titolo-top line-first">Tradizione</span>
             <span class="titolo-bottom">Italiana</span>
@@ -90,13 +90,13 @@
 
     <!-- Modul 3 -->
     <div class="modul">
-      <img class="modul-bg" src="/assets/vespa-azul.webp" alt="Location">
+      <img class="modul-bg" src="/assets/Vespa-dunkelblau.webp" alt="Location">
       <div class="placeholder-icon">📍</div>
       <div class="modul-accent"></div>
       <div class="modul-overlay"></div>
       <div class="modul-arrow" data-drawer="drawer-3">→</div>
       <div class="modul-content">
-        <div class="modul-nummer numero03">Besuche uns</div>
+        <div class="modul-nummer numero03"><span class="modul-nummer-text">Besuche uns</span></div>
           <h2 class="modul-titel modul-titel-split">
             <span class="titolo-top line-first">Kopenhagener</span>
             <span class="titolo-bottom">Straße</span>
@@ -111,7 +111,7 @@
   <!-- ── Sektion: Geschichte ── -->
   <section class="section-storia">
     <div class="storia-inner">
-      <div class="storia-label">La Storia</div>
+      <div class="storia-label"><span class="storia-label-text">La Storia</span></div>
       <h2 class="storia-titel">Ein bisschen<br>Geschichte</h2>
       <div class="storia-line"></div>
       <p class="storia-text">Salvatore stammt aus Neapel und hat Salumeria im Blut. Schon als Kind hat er in der Salumeria seines Onkels und seiner Oma – der <em>Salumeria Sigismondo</em> – mitgeholfen. Die schönen Erinnerungen aus dieser Zeit brachten Salvatore auf die Idee, eine eigene Salumeria zu eröffnen. Damit auch seine Gäste die gleichen frischen und liebevoll zubereiteten Pastagerichte, Wurst- und Käsespezialitäten und vor allem Caffé und Dolci genießen können. Und das mitten in Prenzlauer Berg.</p>
@@ -135,7 +135,7 @@
 
   <!-- ── Sektion: Galerie ── -->
   <section class="section-gallery">
-    <div class="gallery-label">Galleria</div>
+    <div class="gallery-label"><span class="gallery-label-text">Galleria</span></div>
     <div class="gallery-grid">
       <div class="gallery-item"><img src="/assets/koffer.JPG" alt="Sigismondo"></div>
       <div class="gallery-item"><img src="/assets/kanne_fenster.JPG" alt="Sigismondo"></div>
@@ -147,7 +147,7 @@
   </section>
 
   <footer>
-    <h1>Impressum & Datenschutz</h1>
+    <h1 class="footer-impressum">Impressum & Datenschutz</h1>
   </footer>
 
   <div class="drawer-backdrop" id="drawer-backdrop"></div>
@@ -158,12 +158,12 @@
       <button class="drawer-close">✕</button>
       <h3 class="drawer-titel">Cafè Bar</h3>
       <div class="drawer-content">
-        <p><em>Sfogliatelle, Cornetti, Codine, Tartelle al Limone, Cannoli …</em><br>
-        Ab 8.30 Uhr morgens den Tag mit italienischen Leckereien und typisch neapolitanischem Caffé versüßen.</p>
-        <p>Panini, Antipasti, Toast …<br>
-        Frisch belegtes Panino aus unserer Frischetheke oder ein kleiner Antipastiteller mit italienischen Wurst- und Käsespezialitäten.</p>
-        <p><em>Getränke</em><br>
-        Neapolitanischer Caffé, frisch gepresste Säfte, Aperitivi, Chinotto, Lemonsoda und vieles mehr.</p>
+        <p class="drawer-text"><em class="drawer-highlight">Sfogliatelle, Cornetti, Codine, Tartelle al Limone, Cannoli …</em><br>
+        <span class="drawer-beschreibung">Ab 8.30 Uhr morgens den Tag mit italienischen Leckereien und typisch neapolitanischem Caffé versüßen.</span></p>
+        <p class="drawer-text"><span class="drawer-snacks">Panini, Antipasti, Toast …</span><br>
+        <span class="drawer-beschreibung">Frisch belegtes Panino aus unserer Frischetheke oder ein kleiner Antipastiteller mit italienischen Wurst- und Käsespezialitäten.</span></p>
+        <p class="drawer-text"><em class="drawer-highlight">Getränke</em><br>
+        <span class="drawer-beschreibung">Neapolitanischer Caffé, frisch gepresste Säfte, Aperitivi, Chinotto, Lemonsoda und vieles mehr.</span></p>
       </div>
     </div>
   </div>
@@ -174,20 +174,20 @@
       <button class="drawer-close">✕</button>
       <h3 class="drawer-titel">Mittagstisch</h3>
       <div class="drawer-content">
-        <p>Wir haben eine täglich wechselnde Mittagskarte – eine Auswahl zwischen Suppe, drei Pastagerichten, verschiedenen Salaten und weiteren Vorspeisen. Alle Gerichte selbstverständlich auch für außer Haus.</p>
+        <p class="drawer-text drawer-intro">Wir haben eine täglich wechselnde Mittagskarte – eine Auswahl zwischen Suppe, drei Pastagerichten, verschiedenen Salaten und weiteren Vorspeisen. Alle Gerichte selbstverständlich auch für außer Haus.</p>
         <br>
-        <h2>Beispielkarte:</h2>
+        <h2 class="drawer-karte-titel">Beispielkarte:</h2>
         <br>
-        <p><em>Antipasti</em><br>
-        Insalatina di contorno <span style="color: var(--warm-gray)">— Beilagensalat</span><br>
-        Insalata ai frutti di mare <span style="color: var(--warm-gray)">— Meeresfrüchtesalat</span><br>
-        Ribollita <span style="color: var(--warm-gray)">— typische toskanische Suppe</span></p>
-        <p><em>Pasta</em><br>
-        Penne con melanzane, pomodorini freschi e ricotta salata<br>
-        Spaghetti con sugo di polipetti<br>
-        Lasagne con ragú di salsiccia</p>
-        <p><em>Dolci</em><br>
-        Tiramisú · Profiteroles</p>
+        <p class="drawer-text"><em class="drawer-highlight">Antipasti</em><br>
+        Insalatina di contorno <span style="color: var(--warm-gray)" class="drawer-uebersetzung">— Beilagensalat</span><br>
+        Insalata ai frutti di mare <span style="color: var(--warm-gray)" class="drawer-uebersetzung">— Meeresfrüchtesalat</span><br>
+        Ribollita <span style="color: var(--warm-gray)" class="drawer-uebersetzung">— typische toskanische Suppe</span></p>
+        <p class="drawer-text"><em class="drawer-highlight">Pasta</em><br>
+        <span class="drawer-gericht">Penne con melanzane, pomodorini freschi e ricotta salata</span><br>
+        <span class="drawer-gericht">Spaghetti con sugo di polipetti</span><br>
+        <span class="drawer-gericht">Lasagne con ragú di salsiccia</span></p>
+        <p class="drawer-text"><em class="drawer-highlight">Dolci</em><br>
+        <span class="drawer-gericht">Tiramisú · Profiteroles</span></p>
       </div>
     </div>
   </div>
@@ -198,14 +198,14 @@
       <button class="drawer-close">✕</button>
       <h3 class="drawer-titel">Besuche uns</h3>
       <div class="drawer-content addresse">
-        <p><em>Adresse</em>link zu googleMaps<br>
+        <p class="drawer-text"><em class="drawer-highlight">Adresse</em> <span class="drawer-maps-hinweis">link zu googleMaps</span><br>
         <a href="https://www.google.com/maps/place/Bar+Salumeria+Sigismondo/@52.54903,13.4089754,630m" target="_blank" class="maps-link">Kopenhagener Straße 14 · 10437 Berlin · Prenzlauer Berg →</a></p>
-        <p>Öffnungszeiten<br>
-        Mo – Fr: 8.30 – 16.30 Uhr<br>
-        Sa – So: 9.00 – 16.00 Uhr</p>
-        <p><em>Anfahrt</em><br>
-        U-Bahn Schönhauser Allee (U2) oder S-Bahn Schönhauserallee (S41/S42) · Tram M1 Haltestelle Schönhauserallee</p>
-        <p>Wir freuen uns auf dich — <em>cash only.</em></p>
+        <p class="drawer-text"><span class="drawer-oeffnungszeiten-titel">Öffnungszeiten</span><br>
+        <span class="drawer-oeffnungszeiten-wochentag">Mo – Fr: 8.30 – 16.30 Uhr</span><br>
+        <span class="drawer-oeffnungszeiten-wochentag">Sa – So: 9.00 – 16.00 Uhr</span></p>
+        <p class="drawer-text"><em class="drawer-highlight">Anfahrt</em><br>
+        <span class="drawer-anfahrt-beschreibung">U-Bahn Schönhauser Allee (U2) oder S-Bahn Schönhauserallee (S41/S42) · Tram M1 Haltestelle Schönhauserallee</span></p>
+        <p class="drawer-text drawer-abschluss">Wir freuen uns auf dich — <em class="drawer-highlight">cash only.</em></p>
        </div>
     </div>
   </div>

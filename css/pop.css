@@ -13,10 +13,14 @@
 
   /* Hintergrund leicht anders */
   --dark: #111010;
+  --beige1: #5a552f;
+
 }
 
 body {
   font-family: var(--font-body);
+  background-color:var(--beige1);
+  
 }
 
 /* ── Section Header ── */
@@ -27,6 +31,7 @@ body {
   text-transform: uppercase;
   font-size: 0.75rem;
   color: var(--accent);
+  background-color: var(--beige1);
 }
 
 .section-header h1 {
@@ -70,7 +75,6 @@ body {
   text-transform: uppercase;
   font-style: normal;
   line-height: 1;
-  margin-top: 7rem;
 }
 
 .modul-text {
@@ -112,6 +116,19 @@ body {
   font-size: clamp(2.4rem, 5vw, 4rem);
 }
 
+.storia-label, .gallery-label {
+  font-size: 2rem;
+  color:var(--accent)
+}
+
+.storia-line {
+  width: 100%;
+}
+
+.section-storia{
+  background-color: #477cad;
+}
+
 .drawer-titel {
   font-family: var(--font-display);
   font-style: normal;
@@ -124,4 +141,40 @@ body {
 
 .storia-line {
   background: var(--accent);
+}
+
+/* overlay */
+.modul-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 30%,
+    rgba(198,163,90,0.25) 60%,
+    rgba(198,163,90,0.75) 100%
+  );
+  z-index: 2;
+  transition: opacity 0.5s ease;
+}
+
+.modul:hover .modul-overlay {
+  background: linear-gradient(
+    to bottom,
+    transparent 20%,
+    rgba(198,163,90,0.35) 55%,
+    rgba(198,163,90,0.9) 100%
+  );
+}
+
+.modul:nth-child(1) .modul-accent { background: var(--highlight); }
+.modul:nth-child(2) .modul-accent { background: var(--highlight); }
+.modul:nth-child(3) .modul-accent { background: var(--highlight); }
+
+.modul:nth-child(1) .line-first::after,
+.modul:nth-child(2) .line-first::after,
+.modul:nth-child(3) .line-first::after { --title-line-color: var(--accent); }
+
+
+.drawer {
+  background: rgba(75, 139, 200, 0.742); /* 0.85 = 85% opak, nach Geschmack anpassen */
 }

@@ -405,15 +405,14 @@ body {
   position: absolute;
   inset: 0;
   z-index: 3;
-  padding: 16px 36px 36px;
+  padding: 16px 28px 28px;
   display: grid;
   grid-template-rows:
-    160px   /* Label */
-    18px   /* Titel */
-    24px   /* Linie */
-    3fr    /* Beschreibung */
-    auto;  /* Button */
-  align-content: end;
+    60px
+    124px
+    minmax(84px, auto)
+    auto;
+  align-content: start;
   transform: translateY(8px);
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -421,57 +420,55 @@ body {
 .modul:hover .modul-content { transform: translateY(0); }
 
 .modul-nummer {
-  font-size: var(--modul-nummer-size);
+  grid-row: 1;
+  font-size: clamp(1rem, 1.7vw, 1.8rem);
   font-weight: var(--modul-nummer-weight);
   font-style: var(--modul-nummer-style);
-  letter-spacing: var(--modul-nummer-spacing);
+  letter-spacing: clamp(0.08em, 0.18vw, 0.22em);
   text-transform: uppercase;
   color: var(--white);
+  margin: 0;
+  line-height: 1.1;
   white-space: nowrap;
-  margin: 0;
-  display: flex;
-  align-items: start;
-}
-
-.modul-titel {
-  font-family: var(--font-display);
-  font-size: var(--modul-titel-size);
-  font-style: var(--modul-titel-style);
-  font-weight: var(--modul-titel-weight);
-  margin-top: var(--modul-titel-top);
-  line-height: 1.15;
-  color: var(--cream);
-  margin: 0;
-  display: flex;
-  align-items: start;
-
-}
-
-.modul-text {
-  font-size: var(--modul-text-size);
-  font-style: var(--modul-text-style);
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.96);
-  font-weight: 300;
-  max-width: 340px;
-  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
   align-self: start;
 }
 
-.modul-line {
-  width: 100%;
-  max-width: 100%;
-  height: 1px;
-  background: var(--accent);
+.modul-titel {
+  grid-row: 2;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 2.2vw, 2.8rem);
+  font-style: var(--modul-titel-style);
+  font-weight: var(--modul-titel-weight);
+  line-height: 0.95;
+  color: var(--cream);
   margin: 0;
-  transform: scaleX(1);
-  transform-origin: left;
-  align-self: center;
+  align-self: start;
+  margin-top: 2.4em;
+}
+
+.modul-text {
+  grid-row: 3;
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  font-style: var(--modul-text-style);
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.96);
+  font-weight: 300;
+  max-width: 34ch;
+  margin: 6.8em 0 0 0;
+  align-self: start;
+}
+
+
+.modul-line {
+  display: none;
 }
 
 .modul-btn {
+  grid-row: 4;
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 18px;
   font-size: var(--modul-btn-size);
   font-style: var(--modul-btn-style);
   letter-spacing: var(--modul-btn-spacing);
@@ -512,7 +509,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -70%);
-  z-index: 1;
+  z-index: 0;
   font-size: 5rem;
   opacity: 0.07;
   pointer-events: none;
@@ -791,8 +788,6 @@ footer h1 {
    RESPONSIVE
    ══════════════════════════════════════ */
 
-@media (max-width: 1199px) { .modul { aspect-ratio: 3 / 4; } }
-@media (min-width: 1200px) { .modul { aspect-ratio: 1 / 1; } }
 
 @media (max-width: 1020px) {
   .modul-text {
@@ -822,12 +817,28 @@ footer h1 {
   .modul.active .modul-text   { opacity: 1; transform: translateY(0); pointer-events: auto; }
   .modul.active .modul-btn    { opacity: 1; transform: translateY(0); pointer-events: auto; }
   .modul.active .modul-accent { transform: scaleX(1); }
-  .modul-content              { padding: 0 14px; }
+  .modul-titel { margin-top: 1.9em; }
+  .modul-text  { margin-top: 7.2em; }
+  .modul-content {
+    padding: 12px 14px 20px;
+    grid-template-rows:
+      48px
+      92px
+      minmax(72px, auto)
+      auto;
+  }
 }
 
 @media (min-width: 1021px) {
   .modul-arrow { display: none !important; }
-  .modul-content { padding: 16px clamp(16px, 2.5vw, 36px) 36px; }
+  .modul-content {
+    padding: 16px clamp(16px, 2.5vw, 36px) 36px;
+    grid-template-rows:
+      60px
+      124px
+      minmax(84px, auto)
+      auto;
+  }
   .modul-titel   { font-size: clamp(1.5rem, 2.2vw, 2.4rem); }
 }
 
@@ -846,8 +857,6 @@ footer h1 {
   .modul .modul-bg,
   .modul:hover .modul-bg { transform: none !important; }
   .modul-nummer { font-size: 1.5rem; letter-spacing: 0.15em; }
-  .modul-line { transform: scaleX(0); }
-  .modul.active .modul-line { transform: scaleX(1); }
   .modul + .modul { border-left: 1px solid rgba(255,255,255,0.08); border-top: none; }
   .modul-arrow {
     display: block;
@@ -861,8 +870,116 @@ footer h1 {
     pointer-events: none;
   }
   .modul.active .modul-arrow { opacity: 0; }
+  .modul-content {
+    padding: 12px 14px 20px;
+    grid-template-rows:
+      42px
+      78px
+      minmax(64px, auto)
+      auto;
+  }
+  .modul-titel { margin-top: 1.6em; }
+  .modul-text  { margin-top: 6.2em; }
   .section-storia,
   .section-events { padding: 70px 24px; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .drawer-inner { padding: 32px 24px; }
+}
+
+
+
+.modul-titel-split {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  gap: 0.10em;
+}
+
+.titolo-top,
+.titolo-bottom {
+  display: block;
+}
+
+.line-first {
+  position: relative;
+  padding-bottom: 0.22em;
+}
+
+.line-first::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--title-line-color, currentColor);
+}
+
+
+@media (max-width: 1399px) {
+  .modul {
+    aspect-ratio: 3 / 4;
+  }
+}
+
+@media (min-width: 1400px) {
+  .modul {
+    aspect-ratio: 1 / 1;
+  }
+  .modul-content {
+    padding: 20px clamp(20px, 2.5vw, 44px) 44px;
+    grid-template-rows:
+      70px
+      150px
+      minmax(120px, 1fr)
+      auto;
+  }
+  .modul-titel {
+    font-size: clamp(1.8rem, 2.4vw, 3rem);
+    margin-top: 2.6em;
+  }
+  .modul-text {
+    margin-top: 0;
+    max-width: 30ch;
+    line-height: 1.5;
+    align-self: end;
+    padding-bottom: 12px;
+  }
+  .modul-btn {
+    margin-top: 14px;
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1399px) {
+  .modul-content {
+    padding: 16px 20px 28px;
+  }
+
+  .modul-titel {
+    margin-top: 2em;
+  }
+
+  .modul-text {
+    margin-top: 7.4em;
+    max-width: 24ch;
+    line-height: 1.36;
+    padding-bottom: 0;
+  }
+
+  .modul-btn {
+    position: static;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    margin-top: 18px;
+    white-space: nowrap;
+    align-self: start;
+  }
+}
+
+
+.modul-arrow {
+  pointer-events: auto !important;
+  z-index: 10;
+
 }

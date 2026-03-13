@@ -1,6 +1,5 @@
 // ── Drawer ──
 const backdrop = document.getElementById('drawer-backdrop');
-const moduls = document.querySelectorAll('.modul');
 
 function openDrawer(drawerId) {
   const drawer = document.getElementById(drawerId);
@@ -14,19 +13,19 @@ function openDrawer(drawerId) {
   }
 }
 
-// Klick auf Modul-Button → Drawer öffnen (alle Größen)
-document.querySelectorAll('.modul-btn[data-drawer]').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    openDrawer(btn.getAttribute('data-drawer'));
+// DEBUG - Pfeil
+document.querySelectorAll('.modul-arrow').forEach(arrow => {
+  console.log('arrow gefunden:', arrow, '| data-drawer:', arrow.getAttribute('data-drawer'));
+  arrow.addEventListener('click', (e) => {
+    console.log('arrow geklickt!', arrow.getAttribute('data-drawer'));
+    openDrawer(arrow.getAttribute('data-drawer'));
   });
 });
 
-// Klick aufs Modul selbst (z.B. auf den Pfeil) → Drawer öffnen
-moduls.forEach(modul => {
-  modul.addEventListener('click', () => {
-    const btn = modul.querySelector('.modul-btn[data-drawer]');
-    if (btn) openDrawer(btn.getAttribute('data-drawer'));
+// Klick auf "Mehr erfahren" Button → Drawer öffnen
+document.querySelectorAll('.modul-btn[data-drawer]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    openDrawer(btn.getAttribute('data-drawer'));
   });
 });
 
@@ -38,6 +37,7 @@ document.querySelectorAll('.drawer-close').forEach(btn => {
   });
 });
 
+// Backdrop schliessen
 backdrop.addEventListener('click', () => {
   document.querySelectorAll('.drawer').forEach(d => d.classList.remove('open'));
   backdrop.classList.remove('open');

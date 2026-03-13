@@ -3,14 +3,18 @@
    Kein strukturelles CSS hier.
    ═══════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&family=Fredoka:wght@300;400;500&display=swap');
 
 :root {
+  --font-display: 'Ranchers', normal;
+  --font-body:    'Fredoka', sans-serif;
+}
+:root {
   --accent:     #b8976a;
-  --highlight:  #b8976a;
+  --highlight:  #dbfb4d;
   --dark:       #130f09;
 
-  --font-display: 'IM Fell English', serif;
+  --font-display: 'Ranchers', serif;
   --font-body:    'Libre Baskerville', serif;
 
   /* Section-Header */
@@ -19,7 +23,7 @@
   --header-h1-size:      3.4rem;
   --header-h1-spacing:   0.03em;
   --header-h1-transform: none;
-  --header-h1-style:     italic;
+  --header-h1-style:     bold;
   --header-h1-color:     var(--cream);
   --header-h3-size:      1.2rem;
   --header-h3-spacing:   0.12em;
@@ -31,25 +35,25 @@
   --modul-nummer-size:    0.7rem;
   --modul-nummer-weight:  400;
   --modul-nummer-spacing: 0.4em;
-  --modul-nummer-style:   italic;
+  --modul-nummer-style:   normal;
   --modul-titel-size:     clamp(1.8rem, 2.8vw, 2.8rem);
-  --modul-titel-style:    italic;
+  --modul-titel-style:    normal;
   --modul-titel-weight:   400;
   --modul-titel-top:      7rem;
   --modul-text-size:      clamp(0.85rem, 1.1vw, 1rem);
-  --modul-text-style:     italic;
+  --modul-text-style:     normal;
   --modul-btn-size:       0.65rem;
   --modul-btn-spacing:    0.25em;
-  --modul-btn-style:      italic;
+  --modul-btn-style:      normal;
 
   /* Burger Nav */
   --burger-link-size:  2rem;
-  --burger-link-style: italic;
+  --burger-link-style: normal;
 
   /* Drawer */
   --drawer-bg:           #1a1309;
   --drawer-border:       rgba(184, 151, 106, 0.15);
-  --drawer-titel-style:  italic;
+  --drawer-titel-style:  normal;
 }
 
 h1 {
@@ -60,6 +64,7 @@ h1 {
 .section-header h1 {
   padding-bottom: 48px;
   color: pink;
+  ;
 }
 
 .section-header::after {
@@ -68,7 +73,8 @@ h1 {
   margin-top: 20px;
   font-size: 0.8rem;
   letter-spacing: 0.5em;
-  color: rgba(6, 254, 233, 0.35);
+  color: pink;
+  
 }
 
 /* ── Burger Nav: wärmerer Hintergrund ── */
@@ -78,18 +84,56 @@ h1 {
 }
 
 /* ── Modul Accent-Farben ── */
-.modul:nth-child(1) .modul-accent { background: var(--accent); }
-.modul:nth-child(2) .modul-accent { background: rgba(184, 151, 106, 0.6); }
-.modul:nth-child(3) .modul-accent { background: var(--accent); }
+.modul:nth-child(1) .modul-accent { background: pink; }
+.modul:nth-child(2) .modul-accent { background: rgb(255, 251, 0); }
+.modul:nth-child(3) .modul-accent { background: pink; }
 
 /* ── Storia & Events ── */
 .storia-titel,
-.events-titel { font-style: italic; }
+.events-titel { 
+  font-style: normal; 
+  letter-spacing: 2px;
+  color: pink;
+}
 
 .storia-line,
 .events-line  { background: var(--accent); }
 
-.drawer-titel { font-style: italic; }
+.drawer-titel { font-style: normal; }
 
 /* ── Gallery: engerer Gap ── */
-.gallery-grid { gap: 4px; }
+.gallery-grid {
+   gap: 4px; 
+   color: pink;}
+
+.modul-nummer {
+  font-family: 'Ranchers';
+  color: pink;
+}
+
+.modul-titel {
+  color: var(--highlight);
+  letter-spacing: .2rem;
+}
+.section-header {
+  background-color: rgb(223, 25, 31);
+}
+body {
+  background-color: rgb(223, 25, 31); /* rot */
+}
+
+.modules,
+.section-storia,
+.section-events,
+.section-gallery,
+footer {
+  background-color: rgb(255, 251, 0); /* gelb */
+}
+.storia-text {
+  color: black
+}
+
+.storia-label, .gallery-label {
+  font-size: 1.2rem;
+  color: black;
+}

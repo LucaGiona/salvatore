@@ -11,11 +11,11 @@
 </head>
 <body>
 
-  <!-- ── Burger Label (entfernen wenn nicht mehr nötig) ── -->
-  <div class="burger-label">Verschiedene Versionen</div>
 
+    <div class="burger-label">Verschiedene Versionen</div>
   <!-- ── Burger Button ── -->
   <button class="burger-btn" id="burger-btn" aria-label="Menü öffnen">
+    
     <span class="burger-line"></span>
     <span class="burger-line"></span>
     <span class="burger-line"></span>
@@ -23,43 +23,48 @@
 
   <!-- ── Burger Nav Panel ── -->
   <nav class="burger-nav" id="burger-nav">
-    <div class="burger-nav-label">Zu den unterschiedlichen Seiten</div>
+    <div class="burger-nav-label">Unsere Welten</div>
     <ul class="burger-nav-links">
       <li><a href="../index.html" class="burger-nav-link">Home</a></li>
-      <li><a href="/pages-html/pop.html"   class="burger-nav-link">Pop</a></li>
+      <li><a href="/pages/pop.html"   class="burger-nav-link">Pop</a></li>
       <li><a href="/pages-html/italian.html" class="burger-nav-link">Italian</a></li>
     </ul>
     <div class="burger-nav-divider"></div>
- 
+    <div class="burger-nav-footer">
+      Bar Salumeria Sigismondo<br>
+      Kopenhagener Str. 14 · Berlin<br>
+      Cash only
+    </div>
   </nav>
 
-  <!-- ── Burger Overlay ── -->
   <div class="burger-overlay" id="burger-overlay"></div>
 
-
+  <!-- ── Dein Inhalt hier ── -->
   <div class="section-header">
     <h1>Sigismondo</h1>
-    <h3>Caffè Bar</h3>
+    <h3>Caffè Bar </h3>
     <br>
-    <br>
-    <h4>Entdecke uns</h4>
-    <br>
-   
+    Entdecke uns
+    <br><br>
+    cash only
   </div>
 
-  <div class="modules">
+  <!-- Module, Sektionen etc. hier einfügen (gleiche Struktur wie index.html) -->
+     <div class="modules">
 
     <!-- Modul 1 -->
     <div class="modul">
-      <img class="modul-bg" src="/assets/vespa_gruen3_800.webp" alt="Bar">
+      <img class="modul-bg" src="/assets/vespa-rot-gelb.webp" alt="Bar">
       <div class="placeholder-icon">🍷</div>
       <div class="modul-accent"></div>
       <div class="modul-overlay"></div>
-      <div class="modul-arrow">→</div>
+      <div class="modul-arrow" data-drawer="drawer-1">→</div>
       <div class="modul-content">
         <div class="modul-nummer numero01">Cafè Bar</div>
-        <h2 class="modul-titel">La Bella<br>Giornata</h2>
-        <div class="modul-line green"></div>
+          <h2 class="modul-titel modul-titel-split">
+            <span class="titolo-top line-first">La Bella</span>
+            <span class="titolo-bottom">Giornata</span>
+          </h2>
         <p class="modul-text">Neapolitanischer Caffè, Espresso und die Energie eines echten italienischen Morgens.</p>
         <button class="modul-btn" data-drawer="drawer-1">Mehr erfahren →</button>
       </div>
@@ -67,15 +72,17 @@
 
     <!-- Modul 2 -->
     <div class="modul">
-      <img class="modul-bg" src="/assets/vespa_weiss_800.webp" alt="Salumeria">
+      <img class="modul-bg" src="/assets/vespa-weiss.webp" alt="Salumeria">
       <div class="placeholder-icon">🧀</div>
       <div class="modul-accent"></div>
       <div class="modul-overlay"></div>
-      <div class="modul-arrow">→</div>
+      <div class="modul-arrow" data-drawer="drawer-2">→</div>
       <div class="modul-content">
         <div class="modul-nummer">Mittagstisch</div>
-        <h2 class="modul-titel">Tradizione<br>Italiana</h2>
-        <div class="modul-line white"></div>
+          <h2 class="modul-titel modul-titel-split">
+            <span class="titolo-top line-first">Tradizione</span>
+            <span class="titolo-bottom">Italiana</span>
+          </h2>
         <p class="modul-text">Feinkost direkt aus Italien – Salumi, Formaggi und kleine Köstlichkeiten für jeden Anlass.</p>
         <button class="modul-btn" data-drawer="drawer-2">Sortiment ansehen →</button>
       </div>
@@ -83,15 +90,17 @@
 
     <!-- Modul 3 -->
     <div class="modul">
-      <img class="modul-bg" src="/assets/vespa_rot2-800.webp" alt="Location">
+      <img class="modul-bg" src="/assets/vespa-azul-gelb.webp" alt="Location">
       <div class="placeholder-icon">📍</div>
       <div class="modul-accent"></div>
       <div class="modul-overlay"></div>
-      <div class="modul-arrow">→</div>
+      <div class="modul-arrow" data-drawer="drawer-3">→</div>
       <div class="modul-content">
         <div class="modul-nummer numero03">Besuche uns</div>
-        <h2 class="modul-titel">Kopenhagener<br>Straße</h2>
-        <div class="modul-line red"></div>
+          <h2 class="modul-titel modul-titel-split">
+            <span class="titolo-top line-first">Kopenhagener</span>
+            <span class="titolo-bottom">Straße</span>
+          </h2>
         <p class="modul-text">Mitten in Berlin – komm vorbei, setz dich und lass den Abend bei uns ausklingen.</p>
         <button class="modul-btn" data-drawer="drawer-3">Anfahrt & Öffnungszeiten →</button>
       </div>
@@ -111,7 +120,7 @@
   </section>
 
   <!-- ── Sektion: Events ── -->
-  <section class="section-events">
+  <!-- <section class="section-events">
     <div class="events-inner">
       <div class="events-label">Eventi Privati</div>
       <h2 class="events-titel">Geburtstage &<br>besondere Anlässe</h2>
@@ -122,7 +131,7 @@
       <h1 class="events-label cash">Cash Only</h1>
     </div>
    
-  </section>
+  </section> -->
 
   <!-- ── Sektion: Galerie ── -->
   <section class="section-gallery">
@@ -131,7 +140,7 @@
       <div class="gallery-item"><img src="/assets/koffer.JPG" alt="Sigismondo"></div>
       <div class="gallery-item"><img src="/assets/kanne_fenster.JPG" alt="Sigismondo"></div>
       <div class="gallery-item"><img src="/assets/laFamiglia.JPG" alt="Sigismondo"></div>
-      <div class="gallery-item"><img src="/assets/vespa_800.webp" alt="Sigismondo"></div>
+      <div class="gallery-item"><img src="/assets/kronleuchter.JPG" alt="Sigismondo"></div>
       <div class="gallery-item"><img src="/assets/tomaten.JPG" alt="Sigismondo"></div>
       <div class="gallery-item"><img src="/assets/mittagstisch.JPG" alt="Sigismondo"></div>
     </div>
@@ -143,7 +152,7 @@
 
   <div class="drawer-backdrop" id="drawer-backdrop"></div>
 
-  <!-- Drawer 1 -->
+   <!-- Drawer 1 -->
   <div class="drawer" id="drawer-1">
     <div class="drawer-inner">
       <button class="drawer-close">✕</button>

@@ -80,3 +80,7 @@
   background: var(--dark);
   border-top: 4px solid rgba(185, 249, 8, 0.132);
 }
+
+.modul:nth-child(1) .line-first::after { --title-line-color: var(--highlight); }
+.modul:nth-child(2) .line-first::after { --title-line-color: var(--white); }
+.modul:nth-child(3) .line-first::after { --title-line-color: var(--accent); }

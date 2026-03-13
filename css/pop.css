@@ -259,15 +259,21 @@ footer {
   color: var(--dunkelblau);
 }
 
-  .modul-arrow {
 
-    font-size: 3.6rem;
-    color: var(--accent);
-    
-    background-color: #07325f5f;
-    border-radius: 50%;
+.modul-arrow {
+  font-size: 3.6rem;
+  color: var(--accent);
+  background-color: #07325f5f;
+  border-radius: 50%;
+  width: 1.4em;
+  height: 1.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0.1em;  /* schiebt → optisch mittig */
+}
    
-  }
+  
 
   .storia-titel{
     color: var(--dunkelblau);

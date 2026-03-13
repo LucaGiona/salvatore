@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/burger.css">
   <link rel="stylesheet" href="/css/drawer.css">
-  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/artnouveau.css">
   <script src="/js/burger.js" defer></script>
   <script src="/js/script.js" defer></script>
 </head>
@@ -25,19 +25,15 @@
 
   <!-- ── Burger Nav Panel ── -->
   <nav class="burger-nav" id="burger-nav">
-    <div class="burger-nav-label">Unsere Welten</div>
+    <div class="burger-nav-label"><span class="burger-nav-label-text">Unterschiedliche Seiten Layout</span></div>
     <ul class="burger-nav-links">
       <li><a href="../index.html" class="burger-nav-link">Home</a></li>
-      <li><a href="/pages-html/pop.html"   class="burger-nav-link">Blue-Azul</a></li>
-      <li><a href="/pages-html/italian.html" class="burger-nav-link">Italian</a></li>
+      <li><a href="pop.html"   class="burger-nav-link">Blue-Azul</a></li>
+      <li><a href="italian.html" class="burger-nav-link">Italian</a></li>
       <li><a href="/pages-html/artnouveau.html" class="burger-nav-link">Art Nouveau</a></li>
     </ul>
     <div class="burger-nav-divider"></div>
-    <div class="burger-nav-footer">
-      <span class="burger-nav-footer-name">Bar Salumeria Sigismondo</span><br>
-      <span class="burger-nav-footer-adresse">Kopenhagener Str. 14 · Berlin</span><br>
-      <span class="burger-nav-footer-hinweis">Cash only</span>
-    </div>
+
   </nav>
 
   <div class="burger-overlay" id="burger-overlay"></div>
@@ -46,7 +42,7 @@
   <div class="section-header">
     <h1 class="header-titel">Sigismondo</h1>
     <h3 class="header-untertitel">Caffè Bar</h3>
-    <br class="header-spacer">
+    <br>
     <span class="header-cta">Entdecke uns</span>
     <br><br>
     <span class="header-hinweis">cash only</span>
@@ -68,10 +64,8 @@
             <span class="titolo-top line-first">La Bella</span>
             <span class="titolo-bottom">Giornata</span>
           </h2>
-        <div class="modul-bottom">
         <p class="modul-text">Neapolitanischer Caffè, Espresso und die Energie eines echten italienischen Morgens.</p>
-                <button class="modul-btn" data-drawer="drawer-1">Mehr erfahren →</button>
-      </div>
+        <button class="modul-btn" data-drawer="drawer-1">Mehr erfahren →</button>
       </div>
     </div>
 
@@ -83,21 +77,19 @@
       <div class="modul-overlay"></div>
       <div class="modul-arrow" data-drawer="drawer-2">→</div>
       <div class="modul-content">
-        <div class="modul-nummer"><span class="modul-nummer-text">Mittagstisch</span></div>
+        <div class="modul-nummer"><span class="modul-nummer-text middle">Mittagstisch</span></div>
           <h2 class="modul-titel modul-titel-split">
-            <span class="titolo-top line-first">Tradizione</span>
-            <span class="titolo-bottom">Italiana</span>
+            <span class="titolo-top line-first middle">Tradizione</span>
+            <span class="titolo-bottom middle">Italiana</span>
           </h2>
-        <div class="modul-bottom">
         <p class="modul-text">Feinkost direkt aus Italien – Salumi, Formaggi und kleine Köstlichkeiten für jeden Anlass.</p>
-                <button class="modul-btn" data-drawer="drawer-2">Sortiment ansehen →</button>
-      </div>
+        <button class="modul-btn" data-drawer="drawer-2">Sortiment ansehen →</button>
       </div>
     </div>
 
     <!-- Modul 3 -->
     <div class="modul">
-      <img class="modul-bg" src="/assets/vespa-azul-gelb.webp" alt="Location">
+      <img class="modul-bg" src="/assets/vespa-rot-gelb.webp" alt="Location">
       <div class="placeholder-icon">📍</div>
       <div class="modul-accent"></div>
       <div class="modul-overlay"></div>
@@ -108,10 +100,8 @@
             <span class="titolo-top line-first">Kopenhagener</span>
             <span class="titolo-bottom">Straße</span>
           </h2>
-        <div class="modul-bottom">
         <p class="modul-text">Mitten in Berlin – komm vorbei, setz dich und lass den Abend bei uns ausklingen.</p>
-                <button class="modul-btn" data-drawer="drawer-3">Anfahrt & Öffnungszeiten →</button>
-      </div>
+        <button class="modul-btn" data-drawer="drawer-3">Anfahrt & Öffnungszeiten →</button>
       </div>
     </div>
 
@@ -188,9 +178,9 @@
         <h2 class="drawer-karte-titel">Beispielkarte:</h2>
         <br>
         <p class="drawer-text"><em class="drawer-highlight">Antipasti</em><br>
-        Insalatina di contorno <span style="color: var(--warm-gray)" class="drawer-uebersetzung">— Beilagensalat</span><br>
-        Insalata ai frutti di mare <span style="color: var(--warm-gray)" class="drawer-uebersetzung">— Meeresfrüchtesalat</span><br>
-        Ribollita <span style="color: var(--warm-gray)" class="drawer-uebersetzung">— typische toskanische Suppe</span></p>
+        Insalatina di contorno <span  class="drawer-uebersetzung">— Beilagensalat</span><br>
+        Insalata ai frutti di mare <span  class="drawer-uebersetzung">— Meeresfrüchtesalat</span><br>
+        Ribollita <span  class="drawer-uebersetzung">— typische toskanische Suppe</span></p>
         <p class="drawer-text"><em class="drawer-highlight">Pasta</em><br>
         <span class="drawer-gericht">Penne con melanzane, pomodorini freschi e ricotta salata</span><br>
         <span class="drawer-gericht">Spaghetti con sugo di polipetti</span><br>
@@ -207,14 +197,14 @@
       <button class="drawer-close">✕</button>
       <h3 class="drawer-titel">Besuche uns</h3>
       <div class="drawer-content addresse">
-        <p class="drawer-text"><em class="drawer-highlight">Adresse</em> <span class="drawer-maps-hinweis">link zu googleMaps</span><br>
+        <p class="drawer-text"><em class="drawer-highlight adresse">Adresse: </em> <span class="drawer-maps-hinweis"> <br>link zu googleMaps</span><br>
         <a href="https://www.google.com/maps/place/Bar+Salumeria+Sigismondo/@52.54903,13.4089754,630m" target="_blank" class="maps-link">Kopenhagener Straße 14 · 10437 Berlin · Prenzlauer Berg →</a></p>
         <p class="drawer-text"><span class="drawer-oeffnungszeiten-titel">Öffnungszeiten</span><br>
         <span class="drawer-oeffnungszeiten-wochentag">Mo – Fr: 8.30 – 16.30 Uhr</span><br>
         <span class="drawer-oeffnungszeiten-wochentag">Sa – So: 9.00 – 16.00 Uhr</span></p>
         <p class="drawer-text"><em class="drawer-highlight">Anfahrt</em><br>
         <span class="drawer-anfahrt-beschreibung">U-Bahn Schönhauser Allee (U2) oder S-Bahn Schönhauserallee (S41/S42) · Tram M1 Haltestelle Schönhauserallee</span></p>
-        <p class="drawer-text drawer-abschluss">Wir freuen uns auf dich — <em class="drawer-highlight">cash only.</em></p>
+        <p class="drawer-text drawer-abschluss">Wir freuen uns auf dich <em class="drawer-highlight">cash only.</em></p>
        </div>
     </div>
   </div>

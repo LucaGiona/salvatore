@@ -84,3 +84,14 @@
 .modul:nth-child(1) .line-first::after { --title-line-color: var(--highlight); }
 .modul:nth-child(2) .line-first::after { --title-line-color: var(--white); }
 .modul:nth-child(3) .line-first::after { --title-line-color: var(--accent); }
+
+.modul-text,
+.modul-btn {
+  display: inline-block;
+  width: fit-content;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  background: rgba(7, 50, 95, 0.08);
+  padding: 4px 8px;
+  border-radius: 2px;
+}

@@ -28,7 +28,7 @@ body {
 /* ── Section Header ── */
 .section-header {
   text-align: center;
-  padding: 0px 20px 40px;
+  padding: 55px 20px 40px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   font-size: 0.75rem;
@@ -172,7 +172,7 @@ body {
 
 
 .drawer {
-  background: rgba(75, 139, 200, 0.742); /* 0.85 = 85% opak, nach Geschmack anpassen */
+   background: rgba(7, 50, 95, 0.85);  /* 85% opak */
 }
 
 
@@ -211,4 +211,141 @@ footer {
 
 .modul::before {
   opacity: 0;
+}
+
+
+/* header */
+.header-cta {
+  color: var(--dunkelblau);
+  font-size: 1.9rem;;
+}
+
+.header-untertitel {
+  font-size: 1.2rem;
+}
+
+.header-hinweis {
+  font-size: 1rem;
+}
+
+/* burger */
+.burger-label-text {
+  color: var(--highlight);
+  font-size: .8rem;
+}
+
+.burger-label::after {
+  content: '→';
+  font-size: 1.8rem;
+  color:var(--highlight);
+}
+
+/* Schrift Bilder */
+.modul-nummer-text {
+  font-size: 1.7rem;
+  color: var(--azul)
+}
+
+
+.titolo-top,
+.titolo-bottom {
+  color: var(--azul);
+  font-size: 1.6rem;
+  padding-bottom:5px ;
+  text-transform: none;
+}
+
+.middle {
+  color: var(--dunkelblau);
+}
+
+  .modul-arrow {
+
+    font-size: 3.6rem;
+    color: var(--accent);
+    
+    background-color: #07325f5f;
+    border-radius: 50%;
+   
+  }
+
+  .storia-titel{
+    color: var(--dunkelblau);
+  }
+
+  .storia-text {
+    color: white;
+    letter-spacing: 1px;
+    word-spacing: 10%;
+    font-style: normal;
+  }
+
+  .section-gallery {
+    border-top: 2px solid var(--highlight);
+  }
+
+  .burger-nav-divider {
+    background-color: var(--accent);
+    height: 3px;
+    width: 100%;
+  }
+
+  .burger-nav-label-text {
+    color: var(--accent);
+    font-size: 1.1rem;
+  }
+
+  .drawer-titel{
+    color: var(--azul);
+    opacity: 1;
+
+  }
+  .drawer-highlight {
+    color: var(--dunkelblau);
+  }
+
+  .drawer-close {
+    color: var(--highlight);
+    font-size: 2.4rem;
+  }
+
+ .drawer-karte-titel {
+  text-transform: uppercase;
+  color: var(--azul);
+ } 
+
+ .drawer-uebersetzung {
+  color: var(--azul);
+ }
+
+.adresse {
+  color: var(--azul);
+  font-style: normal;
+}
+
+.drawer-maps-hinweis {
+  font-size: .8rem;
+}
+
+.maps-link {
+  color: var(--highlight);
+}
+
+
+.modul-text {
+  
+  color: white;
+  font-size: 1.2rem;
+  background-color: rgba(7, 50, 95, 0.3); 
+  padding: 20px;
+  border-radius: 4px;
+
+}
+
+.modul-btn {
+  color: var(--highlight);
+  font-size: 1rem;
+  background-color: rgba(7, 50, 95, 0.3); 
+  padding: 20px;
+  border-radius: 4px;
 }

@@ -1,34 +1,27 @@
 /* ═══════════════════════════════════════════
    BASE.CSS — Sigismondo · Strukturelle Basis
    Gilt für alle Seiten. Keine Theme-Werte hier.
-   Theme-Dateien überschreiben nur :root-Variablen
-   und font-family / font-style Ausnahmen.
    ═══════════════════════════════════════════ */
 
 
 /* ══════════════════════════════════════
-   DESIGN TOKENS — Default (Home-Theme)
-   Werden von home.css / italian.css überschrieben
+   DESIGN TOKENS
    ══════════════════════════════════════ */
 
 :root {
-  /* Palette (fest, nie überschreiben) */
   --cream:      #f5f0e8;
   --white:      #ffffff;
   --warm-gray:  #8c7b6b;
   --red:        #eb4734;
   --gold:       #e6aa57;
 
-  /* Theme-Hooks — diese werden je Seite überschrieben */
   --dark:       #1a1611;
   --accent:     #eb4734;
   --highlight:  #5dd115;
 
-  /* Typografie-Hooks — werden je Seite überschrieben */
   --font-display: 'Playfair Display', serif;
   --font-body:    'Cormorant Garamond', serif;
 
-  /* Section-Header Typografie-Hooks */
   --header-size:          0.75rem;
   --header-spacing:       0.3em;
   --header-h1-size:       2.8rem;
@@ -42,26 +35,18 @@
   --header-h3-style:      normal;
   --header-h3-color:      var(--cream);
 
-  /* Modul Typografie-Hooks */
-  --modul-nummer-size:    1.8rem;
   --modul-nummer-weight:  bold;
-  --modul-nummer-spacing: 0.35em;
   --modul-nummer-style:   normal;
-  --modul-titel-size:     clamp(1.6rem, 2.5vw, 2.4rem);
   --modul-titel-style:    normal;
   --modul-titel-weight:   400;
-  --modul-titel-top:      auto;
-  --modul-text-size:      clamp(1rem, 1.4vw, 1.05rem);
   --modul-text-style:     normal;
   --modul-btn-size:       0.75rem;
   --modul-btn-spacing:    0.28em;
   --modul-btn-style:      normal;
 
-  /* Burger Nav Typografie-Hook */
   --burger-link-size:     2rem;
   --burger-link-style:    italic;
 
-  /* Drawer Typografie-Hook */
   --drawer-bg:            #211c14;
   --drawer-border:        rgba(255,255,255,0.10);
   --drawer-titel-style:   bold;
@@ -139,9 +124,6 @@ body {
 }
 
 
-/* → Burger-Styles ausgelagert in burger.css */
-
-
 /* ══════════════════════════════════════
    MODULE GRID
    ══════════════════════════════════════ */
@@ -149,13 +131,13 @@ body {
 .modules {
   display: flex;
   width: 100%;
-  max-width: 2400px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
 .modul {
   flex: 1;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 4;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -202,42 +184,39 @@ body {
   background: linear-gradient(to bottom, transparent 20%, rgba(10,8,5,0.4) 55%, rgba(10,8,5,0.92) 100%);
 }
 
+/* Nummer oben, Titel absolut zentriert, Text+Button absolut unten */
 .modul-content {
   position: absolute;
   inset: 0;
   z-index: 3;
   padding: 16px 28px 28px;
-  display: grid;
-  grid-template-rows:
-    60px
-    124px
-    minmax(84px, auto)
-    auto;
-  align-content: start;
-  transform: translateY(8px);
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.modul:hover .modul-content { transform: translateY(0); }
-
+/* Nummer: oben links, im normalen Flow */
 .modul-nummer {
-  grid-row: 1;
+  position: absolute;
+  top: 16px;
+  left: 28px;
+  right: 28px;
   font-size: clamp(1rem, 1.7vw, 1.8rem);
   font-weight: var(--modul-nummer-weight);
   font-style: var(--modul-nummer-style);
   letter-spacing: clamp(0.08em, 0.18vw, 0.22em);
   text-transform: uppercase;
   color: var(--white);
-  margin: 0;
   line-height: 1.1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  align-self: start;
 }
 
+/* Titel: vertikal zentriert, animiert sich bei Hover/Active nach oben */
 .modul-titel {
-  grid-row: 2;
+  position: absolute;
+  top: 50%;
+  left: 28px;
+  right: 28px;
+  transform: translateY(-50%);
   font-family: var(--font-display);
   font-size: clamp(1.7rem, 2.2vw, 2.8rem);
   font-style: var(--modul-titel-style);
@@ -245,31 +224,66 @@ body {
   line-height: 0.95;
   color: var(--cream);
   margin: 0;
-  align-self: start;
-  margin-top: 2.4em;
+}
+
+/* Auf Desktop: Titel höher damit Text+Button unten Platz haben */
+@media (min-width: 1021px) {
+  .modul-titel {
+    top: 38%;
+    transform: translateY(-100%);
+  }
+}
+
+.modul-titel-split {
+  display: flex;
+  flex-direction: column;
+  gap: 0.10em;
+}
+
+.titolo-top,
+.titolo-bottom {
+  display: block;
+}
+
+.line-first {
+  position: relative;
+  padding-bottom: 0.22em;
+}
+
+.line-first::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--title-line-color, currentColor);
+}
+
+/* Wrapper: Text + Button immer unten, wächst nach oben */
+.modul-bottom {
+  position: absolute;
+  bottom: 24px;
+  left: 28px;
+  right: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .modul-text {
-  grid-row: 3;
   font-size: clamp(0.95rem, 1.1vw, 1.05rem);
   font-style: var(--modul-text-style);
   line-height: 1.45;
   color: rgba(255, 255, 255, 0.96);
   font-weight: 300;
   max-width: 34ch;
-  margin: 6.8em 0 0 0;
-  align-self: start;
 }
 
-
-.modul-line {
-  display: none;
-}
+.modul-line { display: none; }
 
 .modul-btn {
-  grid-row: 4;
-  display: inline-block;
-  margin-top: 18px;
+  display: block;
   font-size: var(--modul-btn-size);
   font-style: var(--modul-btn-style);
   letter-spacing: var(--modul-btn-spacing);
@@ -279,16 +293,14 @@ body {
   border: none;
   padding-bottom: 3px;
   cursor: pointer;
-  align-self: start;
+  text-align: left;
 }
 
 .modul-btn:hover { color: var(--highlight); }
 
 .modul-accent {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 2px;
   z-index: 4;
   transform: scaleX(0);
@@ -298,7 +310,6 @@ body {
 
 .modul:hover .modul-accent { transform: scaleX(1); }
 
-/* Default Accent-Farben — werden vom Theme überschrieben */
 .modul:nth-child(1) .modul-accent { background: var(--highlight); }
 .modul:nth-child(2) .modul-accent { background: var(--white); }
 .modul:nth-child(3) .modul-accent { background: var(--red); }
@@ -307,8 +318,7 @@ body {
 
 .placeholder-icon {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 50%; left: 50%;
   transform: translate(-50%, -70%);
   z-index: 0;
   font-size: 5rem;
@@ -478,9 +488,6 @@ body {
 }
 
 
-/* → Drawer-Styles ausgelagert in drawer.css */
-
-
 /* ══════════════════════════════════════
    FOOTER
    ══════════════════════════════════════ */
@@ -504,60 +511,7 @@ footer {
    RESPONSIVE
    ══════════════════════════════════════ */
 
-
-@media (max-width: 1020px) {
-  .modul-text {
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
-  }
-  .modul-btn {
-    opacity: 0;
-    transform: translateY(8px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
-  }
-  .modul-arrow {
-    display: block !important;
-    position: absolute;
-    bottom: 24px;
-    right: 24px;
-    z-index: 5;
-    font-size: 2.2rem;
-    color: rgba(245, 240, 232, 0.6);
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-  .modul.active .modul-arrow  { opacity: 0; pointer-events: none; }
-  .modul.active .modul-text   { opacity: 1; transform: translateY(0); pointer-events: auto; }
-  .modul.active .modul-btn    { opacity: 1; transform: translateY(0); pointer-events: auto; }
-  .modul.active .modul-accent { transform: scaleX(1); }
-  .modul-titel { margin-top: 1.9em; }
-  .modul-text  { margin-top: 7.2em; }
-  .modul-content {
-    padding: 12px 14px 20px;
-    grid-template-rows:
-      48px
-      92px
-      minmax(72px, auto)
-      auto;
-  }
-}
-
-@media (min-width: 1021px) {
-  .modul-arrow { display: none !important; }
-  .modul-content {
-    padding: 16px clamp(16px, 2.5vw, 36px) 36px;
-    grid-template-rows:
-      60px
-      124px
-      minmax(84px, auto)
-      auto;
-  }
-  .modul-titel   { font-size: clamp(1.5rem, 2.2vw, 2.4rem); }
-}
-
+/* Mobile ≤768px */
 @media (max-width: 768px) {
   .modules {
     flex-direction: row;
@@ -573,9 +527,10 @@ footer {
   .modul .modul-bg,
   .modul:hover .modul-bg { transform: none !important; }
   .modul-nummer { font-size: 1.5rem; letter-spacing: 0.15em; }
-  .modul + .modul { border-left: 1px solid rgba(255,255,255,0.08); border-top: none; }
+  .modul + .modul { border-left: 1px solid rgba(255,255,255,0.08); }
+  .modul-bottom { opacity: 0; pointer-events: none; }
   .modul-arrow {
-    display: block;
+    display: block !important;
     position: absolute;
     bottom: 24px;
     right: 36px;
@@ -583,119 +538,45 @@ footer {
     font-size: 1.9rem;
     color: rgba(245, 240, 232, 0.6);
     transition: opacity 0.3s ease;
-    pointer-events: none;
+    pointer-events: auto;
   }
-  .modul.active .modul-arrow { opacity: 0; }
-  .modul-content {
-    padding: 12px 14px 20px;
-    grid-template-rows:
-      42px
-      78px
-      minmax(64px, auto)
-      auto;
-  }
-  .modul-titel { margin-top: 1.6em; }
-  .modul-text  { margin-top: 6.2em; }
+  .modul.active .modul-arrow { opacity: 0; pointer-events: none; }
+  .modul-content { padding: 12px 14px 20px; }
   .section-storia,
   .section-events { padding: 70px 24px; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .drawer-inner { padding: 32px 24px; }
 }
 
-
-
-.modul-titel-split {
-  display: flex;
-  flex-direction: column;
-  align-self: start;
-  gap: 0.10em;
+/* Tablet 769–1020px */
+@media (min-width: 769px) and (max-width: 1020px) {
+  .modul-bottom {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+  .modul-arrow {
+    display: block !important;
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    z-index: 5;
+    font-size: 2.2rem;
+    color: rgba(245, 240, 232, 0.6);
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
+  }
+  .modul.active .modul-arrow  { opacity: 0; pointer-events: none; }
+  .modul.active .modul-bottom { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .modul.active .modul-accent { transform: scaleX(1); }
+  .modul-content { padding: 12px 14px 20px; }
 }
 
-.titolo-top,
-.titolo-bottom {
-  display: block;
-}
-
-.line-first {
-  position: relative;
-  padding-bottom: 0.22em;
-}
-
-.line-first::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background: var(--title-line-color, currentColor);
-}
-
-
-@media (max-width: 1399px) {
-  .modul {
-    aspect-ratio: 3 / 4;
-  }
-}
-
-@media (min-width: 1400px) {
-  .modul {
-    aspect-ratio: 1 / 1;
-  }
-  .modul-content {
-    padding: 20px clamp(20px, 2.5vw, 44px) 44px;
-    grid-template-rows:
-      70px
-      150px
-      minmax(120px, 1fr)
-      auto;
-  }
-  .modul-titel {
-    font-size: clamp(1.8rem, 2.4vw, 3rem);
-    margin-top: 2.6em;
-  }
-  .modul-text {
-    margin-top: 0;
-    max-width: 30ch;
-    line-height: 1.5;
-    align-self: end;
-    padding-bottom: 12px;
-  }
-  .modul-btn {
-    margin-top: 14px;
-  }
-}
-
-@media (min-width: 1100px) and (max-width: 1399px) {
-  .modul-content {
-    padding: 16px 20px 28px;
-  }
-
-  .modul-titel {
-    margin-top: 2em;
-  }
-
-  .modul-text {
-    margin-top: 7.4em;
-    max-width: 24ch;
-    line-height: 1.36;
-    padding-bottom: 0;
-  }
-
-  .modul-btn {
-    position: static;
-    left: auto;
-    bottom: auto;
-    transform: none;
-    margin-top: 18px;
-    white-space: nowrap;
-    align-self: start;
-  }
-}
-
-
-.modul-arrow {
-  pointer-events: auto !important;
-  z-index: 10;
-
+/* Desktop ≥1021px: Text+Button immer sichtbar */
+@media (min-width: 1021px) {
+  .modul-arrow { display: none !important; }
+  .modul-content { padding: 16px clamp(16px, 2.5vw, 36px) 36px; }
+  .modul-titel { font-size: clamp(1.5rem, 2.2vw, 2.4rem); }
+  .modul-bottom { opacity: 1 !important; pointer-events: auto !important; transform: none !important; }
 }

@@ -169,7 +169,7 @@
 
 .burger-label::after {
   content: '→';
-  font-size: 0.8rem;
+  font-size: 1.8rem;
   color: rgba(245, 240, 232, 0.35);
 }
 

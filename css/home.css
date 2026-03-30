@@ -3,19 +3,17 @@
    Kein strukturelles CSS hier.
    ═══════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Ranchers&family=Fredoka:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gochi+Hand&family=Indie+Flower&family=Luckiest+Guy&family=Permanent+Marker&display=swap');
 
-:root {
-  --font-display: 'Ranchers', normal;
-  --font-body:    'Fredoka', sans-serif;
-}
+
 :root {
   --accent:     #b8976a;
   --highlight:  #dbfb4d;
   --dark:       #130f09;
 
-  --font-display: 'Ranchers', serif;
-  --font-body:    'Libre Baskerville', serif;
+  --font-display:    'Luckiest Guy', cursive;   /* H1, Haupttitel */
+  --font-subtitle:   'Permanent Marker', cursive; /* H3, Untertitel — alternativ: 'Gochi Hand' */
+  --font-body:       'Indie Flower', cursive;   /* p, Fließtext */
 
   /* Section-Header */
   --header-size:         0.65rem;
@@ -57,14 +55,29 @@
 }
 
 h1 {
+  font-family: 'Luckiest Guy', cursive;
   color: rgb(251, 10, 50);
+}
+
+h3 {
+  font-family: 'Permanent Marker', cursive;
+  /* alternativ: font-family: 'Gochi Hand', cursive; */
+}
+
+p {
+  font-family: 'Indie Flower', cursive;
 }
 
 /* ── Section Header: dekorative Linie ── */
 .header-titel {
   padding-bottom: 48px;
   color: pink;
-  ;
+  font-family: 'Luckiest Guy', cursive;
+}
+
+.header-untertitel {
+  font-family: 'Permanent Marker', cursive;
+  /* alternativ: font-family: 'Gochi Hand', cursive; */
 }
 
 .section-header::after {
@@ -91,6 +104,7 @@ h1 {
 /* ── Storia & Events ── */
 .storia-titel,
 .events-titel { 
+  font-family: 'Luckiest Guy', cursive;
   font-style: normal; 
   letter-spacing: 2px;
   color: pink;
@@ -107,11 +121,12 @@ h1 {
    color: pink;}
 
 .modul-nummer {
-  font-family: 'Ranchers';
+  font-family: 'Permanent Marker', cursive;
   color: pink;
 }
 
 .modul-titel {
+  font-family: 'Luckiest Guy', cursive;
   color: var(--highlight);
   letter-spacing: .2rem;
 }
@@ -130,10 +145,12 @@ footer {
   background-color: rgb(255, 251, 0); /* gelb */
 }
 .storia-text {
-  color: black
+  font-family: 'Indie Flower', cursive;
+  color: black;
 }
 
 .storia-label, .gallery-label {
+  font-family: 'Permanent Marker', cursive;
   font-size: 1.2rem;
   color: black;
 }

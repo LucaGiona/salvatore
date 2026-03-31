@@ -3,7 +3,7 @@
    Dunkel, floral, dramatisch — wie ein Pariser Plakat 1900
    ═══════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cinzel+Decorative:wght@400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Limelight&family=Poiret+One&family=Yeseva+One&display=swap');
 
 :root {
   --an-vert:        #1a2e1a;   /* tiefes Flaschengrün */
@@ -16,9 +16,9 @@
   --an-rouge:       #8b2020;   /* dunkles Weinrot */
   --an-noir:        #0d150d;
 
-  --font-display: 'Cinzel Decorative', serif;
-  --font-heading: 'Cinzel', serif;
-  --font-body:    'Cormorant Garamond', serif;
+  --font-display: 'Limelight', serif;
+  --font-heading: 'Yeseva One', serif;
+  --font-body:    'Poiret One', sans-serif;
 
   /* Override base tokens */
   --dark:      var(--an-noir);
@@ -45,6 +45,16 @@ body {
   background-color: var(--an-noir);
   font-family: var(--font-body);
 }
+
+/* Global type overrides */
+h1 {
+  font-family: 'Amarante', serif;
+}
+
+p {
+  font-family: var(--font-body);
+}
+
 
 /* ══════════════════════════════════════
    ORNAMENTE — SVG Florale Dekorationen
@@ -78,13 +88,14 @@ body::before {
 }
 
 .header-titel {
-  font-family: var(--font-display);
+  font-family: 'Amarante', serif;
   font-size: clamp(2.8rem, 6vw, 5rem);
   letter-spacing: 0.12em;
   color: var(--an-gold);
   text-shadow: 0 0 40px rgba(201, 168, 76, 0.3);
   margin-bottom: 8px;
 }
+
 
 .header-untertitel {
   font-family: var(--font-heading);
@@ -99,7 +110,7 @@ body::before {
 .header-cta {
   font-family: var(--font-body);
   font-size: 1.1rem;
-  font-style: italic;
+  font-style: normal;
   color: var(--an-cream-dim);
   text-transform: none;
   letter-spacing: 0.05em;
@@ -201,7 +212,7 @@ body::before {
 
 .modul-text {
   font-family: var(--font-body);
-  font-style: italic;
+  font-style: normal;
   font-size: 0.95rem;
   color: var(--an-cream-dim);
   line-height: 1.6;
@@ -280,7 +291,7 @@ body::before {
 }
 
 .storia-text {
-  font-style: italic;
+  font-style: normal;
   color: var(--an-cream-dim);
   line-height: 2;
 }
@@ -336,7 +347,7 @@ body::before {
 }
 
 .drawer-text {
-  font-style: italic;
+  font-style: normal;
   line-height: 1.9;
   color: var(--an-cream-dim);
 }

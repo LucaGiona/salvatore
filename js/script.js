@@ -41,7 +41,8 @@ document.querySelectorAll('.modul-btn[data-drawer]').forEach(btn => {
 
 // Drawer schliessen
 document.querySelectorAll('.drawer-close').forEach(btn => {
-  btn.addEventListener('click', () => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
     btn.closest('.drawer').classList.remove('open');
     backdrop.classList.remove('open');
   });

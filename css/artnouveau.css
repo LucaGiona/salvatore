@@ -411,3 +411,17 @@ footer::before {
   color: rgba(201, 168, 76, 0.35);
   letter-spacing: 0.3em;
 }
+
+
+/* ── Modul Bilder: Filter und Overlay entfernen ── */
+.modul-bg {
+  filter: none;
+}
+
+.modul::before {
+  opacity: 0;
+}
+
+.modul-overlay {
+  background: none;
+}

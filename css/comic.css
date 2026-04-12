@@ -11,6 +11,8 @@
   --highlight:  #dbfb4d;
   --dark:       #130f09;
   --cream:      #f5f0e8;
+  --rot:        #fb2520;
+  --gelb:       #fce91c;
 
   --font-display:    'Luckiest Guy', cursive;   /* H1, Haupttitel */
   --font-subtitle:   'Permanent Marker', cursive; /* H3, Untertitel — alternativ: 'Gochi Hand' */
@@ -99,7 +101,7 @@ p {
 
 /* ── Modul Accent-Farben ── */
 .modul:nth-child(1) .modul-accent { background: pink; }
-.modul:nth-child(2) .modul-accent { background: rgb(255, 251, 0); }
+.modul:nth-child(2) .modul-accent { background: var(--gelb); }
 .modul:nth-child(3) .modul-accent { background: pink; }
 
 /* ── Storia & Events ── */
@@ -132,10 +134,10 @@ p {
   letter-spacing: .2rem;
 }
 .section-header {
-  background-color: rgb(223, 25, 31);
+  background-color: var(--rot);
 }
 body {
-  background-color: rgb(223, 25, 31); /* rot */
+  background-color: var(--rot); /* rot */
 }
 
 .modules,
@@ -143,7 +145,7 @@ body {
 .section-events,
 .section-gallery,
 footer {
-  background-color: rgb(255, 251, 0); /* gelb */
+  background-color: var(--gelb); /* gelb */
 }
 .storia-text {
   font-family: 'Indie Flower', cursive;
@@ -154,4 +156,22 @@ footer {
   font-family: 'Permanent Marker', cursive;
   font-size: 1.2rem;
   color: black;
+}
+
+/* ── Modul Bilder: Filter und Overlay entfernen ── */
+.modul-bg {
+  filter: none;
+}
+
+.modul::before {
+  opacity: 0;
+}
+
+.modul-overlay {
+  background: none;
+}
+
+/* footer */
+footer {
+  background-color: var(--rot);
 }

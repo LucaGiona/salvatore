@@ -39,6 +39,10 @@ body {
   font-family: var(--font-body);
 }
 
+.header-cta {
+  color: var(--accent)
+}
+
 /* Modul Accent-Farben */
 .modul:nth-child(1) .modul-accent { background: var(--highlight); }
 .modul:nth-child(2) .modul-accent { background: #ffffff; }
@@ -47,6 +51,10 @@ body {
 .storia-label, .events-label, .gallery-label {
   font-size: 1.4rem;
   color: var(--highlight);
+}
+
+.storia-titel {
+  color: var(--cream);
 }
 
 .storia-text, .events-text {

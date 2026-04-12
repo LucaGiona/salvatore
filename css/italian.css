@@ -1,19 +1,26 @@
 /* ═══════════════════════════════════════════
-   HOME.CSS — Sigismondo · Home-Theme
-   Überschreibt nur Design-Tokens aus base.css.
+   ITALIAN.CSS — Sigismondo · Original-Theme
+   Überschreibt Design-Tokens aus base.css.
    Kein strukturelles CSS hier.
    ═══════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
 
 :root {
+  /* Farb-Palette — explizit definiert, nicht von base.css abhängig */
+  --dark:       #1a1611;
+  --cream:      #f5f0e8;
+  --warm-gray:  #8c7b6b;
+  --red:        #eb4734;
+  --gold:       #e6aa57;
   --accent:     #eb4734;
   --highlight:  #67df1c;
 
+  /* Fonts */
   --font-display: 'Playfair Display', serif;
   --font-body:    'Cormorant Garamond', serif;
 
-  /* Section-Header */
+  /* Section-Header Tokens */
   --header-h1-size:      2.8rem;
   --header-h1-spacing:   0.18em;
   --header-h1-transform: uppercase;
@@ -23,53 +30,51 @@
   --header-h3-transform: uppercase;
   --header-h3-style:     normal;
   --header-h3-color:     var(--cream);
-
-  /* Modul Accent-Farben */
-  --modul-accent-1: #5dd115;
-  --modul-accent-2: var(--white);
-  --modul-accent-3: var(--red);
 }
 
-/* Modul Accent-Farben (können nicht als Variable in nth-child verwendet werden) */
-.modul:nth-child(1) .modul-accent { background: #5dd115; }
-.modul:nth-child(2) .modul-accent { background: var(--white); }
+/* Body */
+body {
+  background: var(--dark);
+  color: var(--cream);
+  font-family: var(--font-body);
+}
+
+/* Modul Accent-Farben */
+.modul:nth-child(1) .modul-accent { background: var(--highlight); }
+.modul:nth-child(2) .modul-accent { background: #ffffff; }
 .modul:nth-child(3) .modul-accent { background: var(--red); }
 
-.storia-label, .events-label, .gallery-label{
+.storia-label, .events-label, .gallery-label {
   font-size: 1.4rem;
-  color: var(--highlight)
+  color: var(--highlight);
 }
-.storia-text, .events-text{
-  color:white;
+
+.storia-text, .events-text {
+  color: white;
   word-spacing: .3em;
   font-size: 1.3rem;
 }
 
 .numero01 {
-  color:#20fa07;
+  color: #20fa07;
 }
 .numero03 {
-  color:var(--accent);
+  color: var(--accent);
 }
-.green {
-  background-color:var(--highlight);
-   width: 100%;
-}
-.white {
-  background-color:var(--white);
-   width: 100%;
-}
+
 .red, .storia-line, .events-line {
-  background-color:var(--accent);
-   width: 100%;
+  background-color: var(--accent);
+  width: 100%;
 }
+
 .modul-text {
   letter-spacing: .6px;
   margin-bottom: 1em;
 }
-.cash{
+
+.cash {
   margin-top: 4rem;
-  color:var(--gold);
+  color: var(--gold);
   text-align: center;
   font-style: bold;
   font-size: 2rem;
@@ -82,7 +87,7 @@
 }
 
 .modul:nth-child(1) .line-first::after { --title-line-color: var(--highlight); }
-.modul:nth-child(2) .line-first::after { --title-line-color: var(--white); }
+.modul:nth-child(2) .line-first::after { --title-line-color: #ffffff; }
 .modul:nth-child(3) .line-first::after { --title-line-color: var(--accent); }
 
 .modul-text,

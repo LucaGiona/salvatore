@@ -1,0 +1,157 @@
+/* ═══════════════════════════════════════════
+
+   Kein strukturelles CSS hier.
+   ═══════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gochi+Hand&family=Indie+Flower&family=Luckiest+Guy&family=Permanent+Marker&display=swap');
+
+
+:root {
+  --accent:     #b8976a;
+  --highlight:  #dbfb4d;
+  --dark:       #130f09;
+  --cream:      #f5f0e8;
+
+  --font-display:    'Luckiest Guy', cursive;   /* H1, Haupttitel */
+  --font-subtitle:   'Permanent Marker', cursive; /* H3, Untertitel — alternativ: 'Gochi Hand' */
+  --font-body:       'Indie Flower', cursive;   /* p, Fließtext */
+
+  /* Section-Header */
+  --header-size:         0.65rem;
+  --header-spacing:      0.35em;
+  --header-h1-size:      3.4rem;
+  --header-h1-spacing:   0.03em;
+  --header-h1-transform: none;
+  --header-h1-style:     bold;
+  --header-h1-color:     var(--cream);
+  --header-h3-size:      1.2rem;
+  --header-h3-spacing:   0.12em;
+  --header-h3-transform: none;
+  --header-h3-style:     normal;
+  --header-h3-color:     var(--accent);
+
+  /* Modul Typografie */
+  --modul-nummer-size:    0.7rem;
+  --modul-nummer-weight:  400;
+  --modul-nummer-spacing: 0.4em;
+  --modul-nummer-style:   normal;
+  --modul-titel-size:     clamp(1.8rem, 2.8vw, 2.8rem);
+  --modul-titel-style:    normal;
+  --modul-titel-weight:   400;
+  --modul-titel-top:      7rem;
+  --modul-text-size:      clamp(0.85rem, 1.1vw, 1rem);
+  --modul-text-style:     normal;
+  --modul-btn-size:       0.65rem;
+  --modul-btn-spacing:    0.25em;
+  --modul-btn-style:      normal;
+
+  /* Burger Nav */
+  --burger-link-size:  2rem;
+  --burger-link-style: normal;
+
+  /* Drawer */
+  --drawer-bg:           #1a1309;
+  --drawer-border:       rgba(184, 151, 106, 0.15);
+  --drawer-titel-style:  normal;
+}
+
+h1 {
+  font-family: 'Luckiest Guy', cursive;
+  color: rgb(251, 10, 50);
+}
+
+h3 {
+  font-family: 'Permanent Marker', cursive;
+  /* alternativ: font-family: 'Gochi Hand', cursive; */
+}
+
+p {
+  font-family: 'Indie Flower', cursive;
+}
+
+/* ── Section Header: dekorative Linie ── */
+.header-titel {
+  padding-bottom: 48px;
+  color: pink;
+  font-family: 'Luckiest Guy', cursive;
+}
+
+.header-untertitel {
+  font-family: 'Permanent Marker', cursive;
+  /* alternativ: font-family: 'Gochi Hand', cursive; */
+}
+
+.section-header::after {
+  content: '— ✦ —';
+  display: block;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  letter-spacing: 0.5em;
+  color: pink;
+  
+}
+
+/* ── Burger Nav: wärmerer Hintergrund ── */
+.burger-nav {
+  background: rgba(15, 11, 7, 0.98);
+  border-left: 1px solid rgba(184, 151, 106, 0.15);
+}
+
+/* ── Modul Accent-Farben ── */
+.modul:nth-child(1) .modul-accent { background: pink; }
+.modul:nth-child(2) .modul-accent { background: rgb(255, 251, 0); }
+.modul:nth-child(3) .modul-accent { background: pink; }
+
+/* ── Storia & Events ── */
+.storia-titel,
+.events-titel { 
+  font-family: 'Luckiest Guy', cursive;
+  font-style: normal; 
+  letter-spacing: 2px;
+  color: pink;
+}
+
+.storia-line,
+.events-line  { background: var(--accent); }
+
+.drawer-titel { font-style: normal; }
+
+/* ── Gallery: engerer Gap ── */
+.gallery-grid {
+   gap: 4px; 
+   color: pink;}
+
+.modul-nummer {
+  font-family: 'Permanent Marker', cursive;
+  color: pink;
+}
+
+.modul-titel {
+  font-family: 'Luckiest Guy', cursive;
+  color: var(--highlight);
+  letter-spacing: .2rem;
+}
+.section-header {
+  background-color: rgb(223, 25, 31);
+}
+body {
+  background-color: rgb(223, 25, 31); /* rot */
+}
+
+.modules,
+.section-storia,
+.section-events,
+.section-gallery,
+footer {
+  background-color: rgb(255, 251, 0); /* gelb */
+}
+.storia-text {
+  font-family: 'Indie Flower', cursive;
+  color: black;
+}
+
+.storia-label, .gallery-label {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.2rem;
+  color: black;
+}

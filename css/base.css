@@ -1,40 +1,44 @@
 /* ═══════════════════════════════════════════
    BASE.CSS — Sigismondo · Strukturelle Basis
-   Gilt für alle Seiten. Keine Theme-Werte hier.
+   Nur Layout & Struktur. Keine Theme-Farben.
+   Farb-Fallbacks: schwarz / weiß / neutral.
    ═══════════════════════════════════════════ */
 
 
 /* ══════════════════════════════════════
-   DESIGN TOKENS
+   DESIGN TOKENS — neutral / strukturell
    ══════════════════════════════════════ */
 
 :root {
-  --cream:      #f5f0e8;
+  /* Farben: nur neutrale Fallbacks — werden von jeder Seite überschrieben */
+  --cream:      #ffffff;
   --white:      #ffffff;
-  --warm-gray:  #8c7b6b;
-  --red:        #eb4734;
-  --gold:       #e6aa57;
+  --warm-gray:  #888888;
+  --red:        #000000;
+  --gold:       #000000;
+  --dark:       #000000;
+  --accent:     #000000;
+  --highlight:  #000000;
 
-  --dark:       #1a1611;
-  --accent:     #eb4734;
-  --highlight:  #5dd115;
+  /* Fonts: generische Fallbacks — werden von jeder Seite überschrieben */
+  --font-display: serif;
+  --font-body:    sans-serif;
 
-  --font-display: 'Playfair Display', serif;
-  --font-body:    'Cormorant Garamond', serif;
-
+  /* Header Tokens — Größen/Abstände strukturell, Farben neutral */
   --header-size:          0.75rem;
   --header-spacing:       0.3em;
   --header-h1-size:       2.8rem;
   --header-h1-spacing:    0.18em;
   --header-h1-transform:  uppercase;
   --header-h1-style:      normal;
-  --header-h1-color:      var(--highlight);
+  --header-h1-color:      #000000;
   --header-h3-size:       1.8rem;
   --header-h3-spacing:    0.1em;
   --header-h3-transform:  uppercase;
   --header-h3-style:      normal;
-  --header-h3-color:      var(--cream);
+  --header-h3-color:      #000000;
 
+  /* Modul Tokens */
   --modul-nummer-weight:  bold;
   --modul-nummer-style:   normal;
   --modul-titel-style:    normal;
@@ -44,11 +48,13 @@
   --modul-btn-spacing:    0.28em;
   --modul-btn-style:      normal;
 
+  /* Burger */
   --burger-link-size:     2rem;
   --burger-link-style:    italic;
 
-  --drawer-bg:            #211c14;
-  --drawer-border:        rgba(255,255,255,0.10);
+  /* Drawer */
+  --drawer-bg:            #000000;
+  --drawer-border:        rgba(0,0,0,0.10);
   --drawer-titel-style:   bold;
 }
 
@@ -69,8 +75,8 @@
    ══════════════════════════════════════ */
 
 body {
-  background: var(--dark);
-  color: var(--cream);
+  background: #ffffff;
+  color: #000000;
   font-family: var(--font-body);
 }
 
@@ -85,7 +91,7 @@ body {
   letter-spacing: var(--header-spacing);
   text-transform: uppercase;
   font-size: var(--header-size);
-  color: var(--accent);
+  color: #000000;
 }
 
 .header-titel {
@@ -119,7 +125,7 @@ body {
   font-size: 1.2rem;
   letter-spacing: 0.1em;
   text-transform: lowercase;
-  color: var(--red);
+  color: #000000;
   margin-bottom: 12px;
 }
 
@@ -143,9 +149,9 @@ body {
   cursor: pointer;
 }
 
-.modul:nth-child(1) { background: #2a2218; }
-.modul:nth-child(2) { background: #1e1d16; }
-.modul:nth-child(3) { background: #221a14; }
+.modul:nth-child(1) { background: #e0e0e0; }
+.modul:nth-child(2) { background: #e0e0e0; }
+.modul:nth-child(3) { background: #e0e0e0; }
 
 .modul-bg {
   position: absolute;
@@ -175,13 +181,13 @@ body {
 .modul-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 30%, rgba(10,8,5,0.3) 60%, rgba(10,8,5,0.85) 100%);
+  background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.85) 100%);
   z-index: 2;
   transition: opacity 0.5s ease;
 }
 
 .modul:hover .modul-overlay {
-  background: linear-gradient(to bottom, transparent 20%, rgba(10,8,5,0.4) 55%, rgba(10,8,5,0.92) 100%);
+  background: linear-gradient(to bottom, transparent 20%, rgba(0,0,0,0.4) 55%, rgba(0,0,0,0.92) 100%);
 }
 
 /* Nummer oben, Titel absolut zentriert, Text+Button absolut unten */
@@ -203,14 +209,14 @@ body {
   font-style: var(--modul-nummer-style);
   letter-spacing: clamp(0.08em, 0.18vw, 0.22em);
   text-transform: uppercase;
-  color: var(--white);
+  color: #ffffff;
   line-height: 1.1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* Titel: vertikal zentriert, animiert sich bei Hover/Active nach oben */
+/* Titel: vertikal zentriert */
 .modul-titel {
   position: absolute;
   top: 50%;
@@ -222,7 +228,7 @@ body {
   font-style: var(--modul-titel-style);
   font-weight: var(--modul-titel-weight);
   line-height: 0.95;
-  color: var(--cream);
+  color: #ffffff;
   margin: 0;
 }
 
@@ -257,10 +263,10 @@ body {
   right: 0;
   bottom: 0;
   height: 1px;
-  background: var(--title-line-color, currentColor);
+  background: var(--title-line-color, #ffffff);
 }
 
-/* Wrapper: Text + Button immer unten, wächst nach oben */
+/* Wrapper: Text + Button immer unten */
 .modul-bottom {
   position: absolute;
   bottom: 24px;
@@ -289,14 +295,14 @@ body {
   letter-spacing: var(--modul-btn-spacing);
   text-transform: uppercase;
   background: transparent;
-  color: var(--gold);
+  color: #ffffff;
   border: none;
   padding-bottom: 3px;
   cursor: pointer;
   text-align: left;
 }
 
-.modul-btn:hover { color: var(--highlight); }
+.modul-btn:hover { color: #cccccc; }
 
 .modul-accent {
   position: absolute;
@@ -310,9 +316,9 @@ body {
 
 .modul:hover .modul-accent { transform: scaleX(1); }
 
-.modul:nth-child(1) .modul-accent { background: var(--highlight); }
-.modul:nth-child(2) .modul-accent { background: var(--white); }
-.modul:nth-child(3) .modul-accent { background: var(--red); }
+.modul:nth-child(1) .modul-accent { background: #000000; }
+.modul:nth-child(2) .modul-accent { background: #ffffff; }
+.modul:nth-child(3) .modul-accent { background: #000000; }
 
 .modul + .modul { border-left: 1px solid rgba(255,255,255,0.06); }
 
@@ -335,8 +341,8 @@ body {
 
 .section-storia {
   padding: 100px 20px;
-  background: var(--dark);
-  border-top: 4px solid rgba(185, 249, 8, 0.132);
+  background: #ffffff;
+  border-top: 1px solid #cccccc;
 }
 
 .storia-inner {
@@ -348,7 +354,7 @@ body {
   font-size: 0.7rem;
   letter-spacing: 0.4em;
   text-transform: uppercase;
-  color: var(--warm-gray);
+  color: #888888;
   margin-bottom: 24px;
 }
 
@@ -357,26 +363,26 @@ body {
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 400;
   line-height: 1.15;
-  color: var(--cream);
+  color: #000000;
 }
 
 .storia-line {
   width: 40px;
   height: 1px;
-  background: var(--accent);
+  background: #000000;
   margin: 28px 0;
 }
 
 .storia-text {
   font-size: clamp(0.95rem, 1.3vw, 1.05rem);
   line-height: 1.85;
-  color: rgba(245, 240, 232, 0.72);
+  color: #333333;
   font-weight: 300;
   margin-bottom: 1.4em;
 }
 
 .storia-invite {
-  color: rgba(245, 240, 232, 0.48);
+  color: #666666;
   font-style: italic;
 }
 
@@ -387,7 +393,7 @@ body {
 
 .section-events {
   padding: 100px 20px;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid #cccccc;
 }
 
 .events-inner {
@@ -399,7 +405,7 @@ body {
   font-size: 0.7rem;
   letter-spacing: 0.4em;
   text-transform: uppercase;
-  color: var(--warm-gray);
+  color: #888888;
   margin-bottom: 24px;
 }
 
@@ -408,20 +414,20 @@ body {
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 400;
   line-height: 1.15;
-  color: var(--cream);
+  color: #000000;
 }
 
 .events-line {
   width: 40px;
   height: 1px;
-  background: var(--accent);
+  background: #000000;
   margin: 28px 0;
 }
 
 .events-text {
   font-size: clamp(0.95rem, 1.3vw, 1.05rem);
   line-height: 1.85;
-  color: rgba(245, 240, 232, 0.72);
+  color: #333333;
   font-weight: 300;
   margin-bottom: 2em;
 }
@@ -431,16 +437,16 @@ body {
   font-size: 0.7rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--cream);
-  border: 1px solid rgba(245, 240, 232, 0.25);
+  color: #000000;
+  border: 1px solid #cccccc;
   padding: 14px 28px;
   text-decoration: none;
   transition: border-color 0.3s ease, color 0.3s ease;
 }
 
 .events-btn:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: #000000;
+  color: #000000;
 }
 
 
@@ -450,14 +456,14 @@ body {
 
 .section-gallery {
   padding: 80px 20px;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid #cccccc;
 }
 
 .gallery-label {
   font-size: 0.7rem;
   letter-spacing: 0.4em;
   text-transform: uppercase;
-  color: var(--warm-gray);
+  color: #888888;
   text-align: center;
   margin-bottom: 48px;
 }
@@ -471,7 +477,7 @@ body {
 .gallery-item {
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: #2a2218;
+  background: #e0e0e0;
 }
 
 .gallery-item img {
@@ -494,7 +500,7 @@ body {
 
 footer {
   padding: 40px 24px;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid #cccccc;
   text-align: center;
 }
 
@@ -502,7 +508,7 @@ footer {
   font-size: 0.7rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.18);
+  color: #cccccc;
   font-weight: 300;
 }
 

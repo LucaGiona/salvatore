@@ -5,59 +5,52 @@ body {
   color: black;
 }
 
+/* ── Dark Mode ── */
 body.dark {
   background-color: black;
   color: white;
+
+  /* CSS-Variablen überschreiben, damit var()-Referenzen in base.css mitmachen */
+  --header-h1-color: #ffffff;
+  --header-h3-color: #ffffff;
 }
 
-body.dark .section-header,
-body.dark .section-storia,
-body.dark .section-events,
-body.dark .section-gallery,
-body.dark .modules,
-body.dark footer {
-  background-color: black;
-  color: white;
-}
+/* Header */
+body.dark .section-header { background-color: black; color: white; }
+body.dark .header-cta      { color: white; }
 
-body.dark .storia-titel,
-body.dark .events-titel {
-  color: white;
-}
+/* Module */
+body.dark .modul:nth-child(1),
+body.dark .modul:nth-child(2),
+body.dark .modul:nth-child(3) { background: #222222; }
 
-body.dark .storia-text,
-body.dark .events-text {
-  color: #cccccc;
-}
+body.dark .modul:nth-child(1) .modul-accent,
+body.dark .modul:nth-child(3) .modul-accent { background: #ffffff; }
 
-body.dark .storia-invite {
-  color: #888888;
-}
+/* Storia */
+body.dark .section-storia     { background-color: black; border-top-color: #333333; }
+body.dark .storia-titel        { color: white; }
+body.dark .storia-label        { color: #aaaaaa; }
+body.dark .storia-line         { background: white; }
+body.dark .storia-text         { color: #cccccc; }
+body.dark .storia-invite       { color: #888888; }
 
-body.dark .storia-line,
-body.dark .events-line {
-  background: white;
-}
+/* Events */
+body.dark .section-events      { border-top-color: #333333; }
+body.dark .events-titel        { color: white; }
+body.dark .events-label        { color: #aaaaaa; }
+body.dark .events-line         { background: white; }
+body.dark .events-text         { color: #cccccc; }
+body.dark .events-btn          { color: white; border-color: #555555; }
 
-body.dark .storia-label,
-body.dark .events-label,
-body.dark .gallery-label {
-  color: #aaaaaa;
-}
+/* Gallery */
+body.dark .section-gallery     { border-top-color: #333333; }
+body.dark .gallery-label       { color: #aaaaaa; }
+body.dark .gallery-item        { background: #222222; }
 
-body.dark footer {
-  border-top-color: #333333;
-}
-
-body.dark .footer-impressum {
-  color: #444444;
-}
-
-body.dark .section-storia,
-body.dark .section-events,
-body.dark .section-gallery {
-  border-top-color: #333333;
-}
+/* Footer */
+body.dark footer               { background-color: black; border-top-color: #333333; }
+body.dark .footer-impressum    { color: #444444; }
 
 /* ── Theme Toggle Button ── */
 .theme-toggle {
@@ -81,4 +74,16 @@ body.dark .section-gallery {
 
 .theme-toggle:hover {
   opacity: 0.6;
+}
+
+.header-titel {
+  margin-top: 4rem;
+}
+
+.burger-title{
+  color: rgb(249, 30, 190);
+  font-size: .8rem;
+}
+body.dark .burger-title{
+  color: gold;
 }

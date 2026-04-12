@@ -87,7 +87,7 @@ body {
 
 .section-header {
   text-align: center;
-  padding: 0 20px 40px;
+  padding: 0 0px 20px;
   letter-spacing: var(--header-spacing);
   text-transform: uppercase;
   font-size: var(--header-size);
@@ -103,9 +103,10 @@ body {
   font-style: var(--header-h1-style);
   color: var(--header-h1-color);
   font-weight: 400;
-  margin-top: 22px;
+  margin-top:4rem;
   margin-bottom: 12px;
 }
+
 
 .header-untertitel {
   display: block;

@@ -425,3 +425,8 @@ footer::before {
 .modul-overlay {
   background: none;
 }
+
+.footer-links {
+ color: var(--an-gold-light)
+}
+

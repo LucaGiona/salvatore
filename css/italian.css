@@ -91,7 +91,7 @@ body {
 .section-storia, .section-events, .section-gallery {
   padding: 100px 20px;
   background: var(--dark);
-  border-top: 4px solid rgba(185, 249, 8, 0.132);
+  border-top: 2px solid rgba(32, 198, 10, 0.894);
 }
 
 .modul:nth-child(1) .line-first::after { --title-line-color: var(--highlight); }
@@ -107,4 +107,19 @@ body {
   background: rgba(7, 50, 95, 0.08);
   padding: 4px 8px;
   border-radius: 2px;
+}
+
+
+footer {
+  padding: 40px 24px;
+  border-top: 1px solid #28d511;
+  text-align: center;
+}
+
+.footer-impressum {
+  font-size: .8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 300;
 }

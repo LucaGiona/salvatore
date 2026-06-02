@@ -1,6 +1,5 @@
 /* ═══════════════════════════════════════════
-
-   Kein strukturelles CSS hier.
+   COMIC.CSS — Pop-Art Theme
    ═══════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gochi+Hand&family=Indie+Flower&family=Luckiest+Guy&family=Permanent+Marker&display=swap');
@@ -14,9 +13,9 @@
   --rot:        #fb2520;
   --gelb:       #fce91c;
 
-  --font-display:    'Luckiest Guy', cursive;   /* H1, Haupttitel */
-  --font-subtitle:   'Permanent Marker', cursive; /* H3, Untertitel — alternativ: 'Gochi Hand' */
-  --font-body:       'Indie Flower', cursive;   /* p, Fließtext */
+  --font-display:    'Luckiest Guy', cursive;
+  --font-subtitle:   'Permanent Marker', cursive;
+  --font-body:       'Indie Flower', cursive;
 
   /* Section-Header */
   --header-size:         0.65rem;
@@ -33,15 +32,9 @@
   --header-h3-color:     var(--accent);
 
   /* Modul Typografie */
-  --modul-nummer-size:    0.7rem;
   --modul-nummer-weight:  400;
-  --modul-nummer-spacing: 0.4em;
-  --modul-nummer-style:   normal;
-  --modul-titel-size:     clamp(1.8rem, 2.8vw, 2.8rem);
   --modul-titel-style:    normal;
   --modul-titel-weight:   400;
-  --modul-titel-top:      7rem;
-  --modul-text-size:      clamp(0.85rem, 1.1vw, 1rem);
   --modul-text-style:     normal;
   --modul-btn-size:       0.65rem;
   --modul-btn-spacing:    0.25em;
@@ -64,23 +57,50 @@ h1 {
 
 h3 {
   font-family: 'Permanent Marker', cursive;
-  /* alternativ: font-family: 'Gochi Hand', cursive; */
 }
 
 p {
   font-family: 'Indie Flower', cursive;
 }
 
-/* ── Section Header: dekorative Linie ── */
+
+/* ══════════════════════════════════════
+   BODY — Halftone Polka-Dot
+   ══════════════════════════════════════ */
+
+body {
+  background: linear-gradient(135deg,
+    #c80000 0%,
+    var(--rot) 30%,
+    #ff5500 60%,
+    var(--gelb) 100%
+  );
+  background-attachment: fixed;
+}
+
+
+/* ══════════════════════════════════════
+   SECTION HEADER — Diagonal Rot→Gelb
+   ══════════════════════════════════════ */
+
+.section-header {
+  background: linear-gradient(135deg,
+    #c80000 0%,
+    var(--rot) 30%,
+    #ff5500 60%,
+    var(--gelb) 100%
+  );
+}
+
 .header-titel {
   padding-bottom: 48px;
-  color: pink;
+  color: var(--cream);
   font-family: 'Luckiest Guy', cursive;
+  text-shadow: 3px 3px 0 #000, 5px 5px 0 rgba(0,0,0,0.25);
 }
 
 .header-untertitel {
   font-family: 'Permanent Marker', cursive;
-  /* alternativ: font-family: 'Gochi Hand', cursive; */
 }
 
 .section-header::after {
@@ -89,39 +109,73 @@ p {
   margin-top: 20px;
   font-size: 0.8rem;
   letter-spacing: 0.5em;
-  color: pink;
-  
+  color: var(--gelb);
 }
 
-/* ── Burger Nav: wärmerer Hintergrund ── */
-.burger-nav {
-  background: rgba(15, 11, 7, 0.98);
-  border-left: 1px solid rgba(184, 151, 106, 0.15);
+
+/* ══════════════════════════════════════
+   MODULES — Bunter Hintergrund
+   ══════════════════════════════════════ */
+
+.modules {
+  background: linear-gradient(180deg,
+    var(--gelb) 0%,
+    #ffe800 50%,
+    #ffd000 100%
+  );
 }
 
-/* ── Modul Accent-Farben ── */
-.modul:nth-child(1) .modul-accent { background: pink; }
-.modul:nth-child(2) .modul-accent { background: var(--gelb); }
-.modul:nth-child(3) .modul-accent { background: pink; }
 
-/* ── Storia & Events ── */
-.storia-titel,
-.events-titel { 
-  font-family: 'Luckiest Guy', cursive;
-  font-style: normal; 
-  letter-spacing: 2px;
-  color: pink;
+/* ══════════════════════════════════════
+   MODUL OVERLAYS — farbige Tints
+   ══════════════════════════════════════ */
+
+.modul-bg {
+  filter: none;
 }
 
-.storia-line,
-.events-line  { background: var(--accent); }
+.modul::before {
+  opacity: 0;
+}
 
-.drawer-titel { font-style: normal; }
+.modul:nth-child(1) .modul-overlay {
+  background: linear-gradient(to bottom,
+    transparent 25%,
+    rgba(251, 37, 32, 0.25) 60%,
+    rgba(180, 0, 0, 0.85) 100%
+  );
+}
 
-/* ── Gallery: engerer Gap ── */
-.gallery-grid {
-   gap: 4px; 
-   color: pink;}
+.modul:nth-child(2) .modul-overlay {
+  background: linear-gradient(to bottom,
+    transparent 25%,
+    rgba(252, 233, 28, 0.2) 60%,
+    rgba(160, 130, 0, 0.82) 100%
+  );
+}
+
+.modul:nth-child(3) .modul-overlay {
+  background: linear-gradient(to bottom,
+    transparent 25%,
+    rgba(251, 37, 32, 0.25) 60%,
+    rgba(180, 0, 0, 0.85) 100%
+  );
+}
+
+
+/* ══════════════════════════════════════
+   MODUL ACCENT LINES — Gradient
+   ══════════════════════════════════════ */
+
+.modul:nth-child(1) .modul-accent {
+  background: linear-gradient(90deg, var(--rot), #ff6b00, var(--gelb));
+}
+.modul:nth-child(2) .modul-accent {
+  background: linear-gradient(90deg, var(--gelb), #ff6b00, var(--rot));
+}
+.modul:nth-child(3) .modul-accent {
+  background: linear-gradient(90deg, var(--rot), var(--gelb), var(--rot));
+}
 
 .modul-nummer {
   font-family: 'Permanent Marker', cursive;
@@ -133,45 +187,115 @@ p {
   color: var(--highlight);
   letter-spacing: .2rem;
 }
-.section-header {
-  background-color: var(--rot);
-}
-body {
-  background-color: var(--rot); /* rot */
+
+.titolo-top,
+.titolo-bottom {
+  text-shadow: 3px 3px 0 #ff69b4, 5px 5px 0 rgba(255, 105, 180, 0.35);
 }
 
-.modules,
-.section-storia,
-.section-events,
-.section-gallery,
-footer {
-  background-color: var(--gelb); /* gelb */
+
+/* ══════════════════════════════════════
+   STORIA — Gelb→Orange Gradient
+   ══════════════════════════════════════ */
+
+.section-storia {
+  background: linear-gradient(160deg,
+    var(--gelb) 0%,
+    #ffe033 40%,
+    #ffcc00 70%,
+    #ffc200 100%
+  );
+  border-top: 1px solid #cccccc;
 }
+
+.storia-titel,
+.events-titel {
+  font-family: 'Luckiest Guy', cursive;
+  font-style: normal;
+  letter-spacing: 2px;
+  color: var(--rot);
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.15);
+}
+
+.storia-line,
+.events-line {
+  background: linear-gradient(90deg, var(--rot), #ff6b00);
+  height: 3px;
+}
+
 .storia-text {
   font-family: 'Indie Flower', cursive;
   color: black;
 }
 
-.storia-label, .gallery-label {
+.storia-label,
+.gallery-label {
   font-family: 'Permanent Marker', cursive;
   font-size: 1.2rem;
   color: black;
 }
 
-/* ── Modul Bilder: Filter und Overlay entfernen ── */
-.modul-bg {
-  filter: none;
+
+/* ══════════════════════════════════════
+   EVENTS — Rot→Pink Gradient
+   ══════════════════════════════════════ */
+
+.section-events {
+  background: linear-gradient(160deg,
+    var(--rot) 0%,
+    #e8001c 40%,
+    #c8001a 100%
+  );
+  border-top: none;
 }
 
-.modul::before {
-  opacity: 0;
+.section-events .events-titel,
+.section-events .events-label,
+.section-events .events-text {
+  color: var(--gelb);
 }
 
-.modul-overlay {
-  background: none;
+.section-events .events-line {
+  background: linear-gradient(90deg, var(--gelb), #ffaa00);
 }
 
-/* footer */
+
+/* ══════════════════════════════════════
+   GALLERY — Gelb mit Dots
+   ══════════════════════════════════════ */
+
+.section-gallery {
+  background-color: var(--gelb);
+  background-image: radial-gradient(circle, rgba(251, 37, 32, 0.15) 5px, transparent 2px);
+  background-size: 20px 20px;
+  border-top: 1px solid #cccccc;
+}
+
+.gallery-grid {
+  gap: 4px;
+}
+
+
+/* ══════════════════════════════════════
+   FOOTER — Rot Gradient
+   ══════════════════════════════════════ */
+
 footer {
-  background-color: var(--rot);
+  background: linear-gradient(135deg,
+    #c80000 0%,
+    var(--rot) 50%,
+    #ff3300 100%
+  );
 }
+
+
+/* ══════════════════════════════════════
+   BURGER NAV
+   ══════════════════════════════════════ */
+
+.burger-nav {
+  background: rgba(15, 11, 7, 0.98);
+  border-left: 1px solid rgba(184, 151, 106, 0.15);
+}
+
+.drawer-titel { font-style: normal; }

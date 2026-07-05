@@ -2,7 +2,29 @@
    COMIC.CSS — Pop-Art Theme
    ═══════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gochi+Hand&family=Indie+Flower&family=Luckiest+Guy&family=Permanent+Marker&display=swap');
+@font-face {
+  font-family: 'Indie Flower';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/Indie_Flower_normal_400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Luckiest Guy';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/Luckiest_Guy_normal_400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Permanent Marker';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/Permanent_Marker_normal_400.woff2') format('woff2');
+}
 
 
 :root {

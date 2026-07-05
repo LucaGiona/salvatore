@@ -3,7 +3,37 @@
    Dunkel, floral, dramatisch — wie ein Pariser Plakat 1900
    ═══════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Limelight&family=Poiret+One&family=Yeseva+One&display=swap');
+@font-face {
+  font-family: 'Amarante';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/Amarante_normal_400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Limelight';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/Limelight_normal_400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Poiret One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/Poiret_One_normal_400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Yeseva One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/Yeseva_One_normal_400.woff2') format('woff2');
+}
 
 :root {
   --an-vert:        #1a2e1a;   /* tiefes Flaschengrün */
